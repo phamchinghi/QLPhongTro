@@ -29,12 +29,14 @@ namespace QL_PhongTro.Data
 
         public int DTSD { get; set; }
 
+        public decimal Giá_phòng { get; set; }
+
         [StringLength(4)]
         public string Huong { get; set; }
 
-        [Column("Mã KH")]
-        [StringLength(5)]
-        public string Mã_KH { get; set; }
+        //[Column("Mã KH")]
+        //[StringLength(5)]
+        //public string Mã_KH { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_TrangBi> CT_TrangBi { get; set; }

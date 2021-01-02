@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace QL_PhongTro
 {
     public partial class FormLogin : Form
@@ -23,7 +24,7 @@ namespace QL_PhongTro
         {
             try
             {
-                List<Tài_khoản> listTaiKhoan = DB.Tài_khoản.ToList();//lay danh sach khach hang
+                List<Tài_khoản> listTaiKhoan = DB.Tài_khoản.ToList();//lấy danh sách tài khoản
             }
             catch (Exception err)
             {
@@ -42,10 +43,10 @@ namespace QL_PhongTro
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        { 
+            //Close();
+            System.Windows.Forms.Application.Exit();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             List<Tài_khoản> listTaiKhoan = DB.Tài_khoản.ToList();
@@ -55,15 +56,33 @@ namespace QL_PhongTro
             }
             else
             {
+                //for(int i = 0; i < listTaiKhoan.Count; i++)
+                //{
+                //    if (DB.Tài_khoản.ToString() == txtUserName.Text && DB.Tài_khoản.ToString() == txtpassword.Text)
+                //    {
+                //        this.Close();
+                //    }
+                //    else
+                //    {
+                //        txtUserName.Clear();
+                //        txtpassword.Clear();
+                //        txtUserName.Focus();
+                //    }
+                //}
                 foreach (var item in listTaiKhoan)
                 {
                     if (item.User_name == txtUserName.Text && item.Password == txtpassword.Text)
                     {
                         this.Close();
+                        break;
                     }
                     else
                     {
-                        MessageBox.Show("Sai mật khẩu", "Note", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        MessageBox.Show("Sai mật khẩu", "Note", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtUserName.Clear();
+                        txtpassword.Clear();
+                        txtUserName.Focus();
+                        break;
                     }
                 }
             }

@@ -340,6 +340,7 @@
             this.barButtonItem10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem10.ImageOptions.SvgImage")));
             this.barButtonItem10.LargeWidth = 100;
             this.barButtonItem10.Name = "barButtonItem10";
+            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem10_ItemClick);
             // 
             // barbtnGiaDien
             // 
@@ -813,6 +814,7 @@
             this.lblPhong108.Text = "P108 ";
             this.lblPhong108.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong108.Click += new System.EventHandler(this.lblPhong101_Click);
+            this.lblPhong108.DoubleClick += new System.EventHandler(this.LblPhong101_DoubleClick);
             this.lblPhong108.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
             this.lblPhong108.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
@@ -829,6 +831,7 @@
             this.lblPhong104.Text = "P104 ";
             this.lblPhong104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong104.Click += new System.EventHandler(this.lblPhong101_Click);
+            this.lblPhong104.DoubleClick += new System.EventHandler(this.LblPhong101_DoubleClick);
             this.lblPhong104.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
             this.lblPhong104.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
@@ -845,6 +848,7 @@
             this.lblPhong107.Text = "P107 ";
             this.lblPhong107.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong107.Click += new System.EventHandler(this.lblPhong101_Click);
+            this.lblPhong107.DoubleClick += new System.EventHandler(this.LblPhong101_DoubleClick);
             this.lblPhong107.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
             this.lblPhong107.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
@@ -861,6 +865,7 @@
             this.lblPhong103.Text = "P103 ";
             this.lblPhong103.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong103.Click += new System.EventHandler(this.lblPhong101_Click);
+            this.lblPhong103.DoubleClick += new System.EventHandler(this.LblPhong101_DoubleClick);
             this.lblPhong103.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
             this.lblPhong103.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
@@ -877,6 +882,7 @@
             this.lblPhong106.Text = "P106 ";
             this.lblPhong106.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong106.Click += new System.EventHandler(this.lblPhong101_Click);
+            this.lblPhong106.DoubleClick += new System.EventHandler(this.LblPhong101_DoubleClick);
             this.lblPhong106.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
             this.lblPhong106.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
@@ -893,6 +899,7 @@
             this.lblPhong102.Text = "P102 ";
             this.lblPhong102.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong102.Click += new System.EventHandler(this.lblPhong101_Click);
+            this.lblPhong102.DoubleClick += new System.EventHandler(this.LblPhong101_DoubleClick);
             this.lblPhong102.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
             this.lblPhong102.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
@@ -909,6 +916,7 @@
             this.lblPhong105.Text = "P105 ";
             this.lblPhong105.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong105.Click += new System.EventHandler(this.lblPhong101_Click);
+            this.lblPhong105.DoubleClick += new System.EventHandler(this.LblPhong101_DoubleClick);
             this.lblPhong105.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
             this.lblPhong105.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
@@ -1058,6 +1066,9 @@
             this.lblPhong208.Text = "P208 ";
             this.lblPhong208.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong208.Click += new System.EventHandler(this.lblPhong201_Click);
+            this.lblPhong208.DoubleClick += new System.EventHandler(this.LblPhong201_DoubleClick);
+            this.lblPhong208.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong208.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // lblPhong204
             // 
@@ -1072,6 +1083,9 @@
             this.lblPhong204.Text = "P204 ";
             this.lblPhong204.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong204.Click += new System.EventHandler(this.lblPhong201_Click);
+            this.lblPhong204.DoubleClick += new System.EventHandler(this.LblPhong201_DoubleClick);
+            this.lblPhong204.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong204.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // lblPhong207
             // 
@@ -1086,6 +1100,9 @@
             this.lblPhong207.Text = "P207 ";
             this.lblPhong207.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong207.Click += new System.EventHandler(this.lblPhong201_Click);
+            this.lblPhong207.DoubleClick += new System.EventHandler(this.LblPhong201_DoubleClick);
+            this.lblPhong207.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong207.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // lblPhong203
             // 
@@ -1100,6 +1117,9 @@
             this.lblPhong203.Text = "P203 ";
             this.lblPhong203.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong203.Click += new System.EventHandler(this.lblPhong201_Click);
+            this.lblPhong203.DoubleClick += new System.EventHandler(this.LblPhong201_DoubleClick);
+            this.lblPhong203.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong203.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // lblPhong206
             // 
@@ -1114,6 +1134,9 @@
             this.lblPhong206.Text = "P206 ";
             this.lblPhong206.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong206.Click += new System.EventHandler(this.lblPhong201_Click);
+            this.lblPhong206.DoubleClick += new System.EventHandler(this.LblPhong201_DoubleClick);
+            this.lblPhong206.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong206.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // lblPhong202
             // 
@@ -1128,6 +1151,9 @@
             this.lblPhong202.Text = "P202 ";
             this.lblPhong202.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong202.Click += new System.EventHandler(this.lblPhong201_Click);
+            this.lblPhong202.DoubleClick += new System.EventHandler(this.LblPhong201_DoubleClick);
+            this.lblPhong202.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong202.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // lblPhong205
             // 
@@ -1142,6 +1168,9 @@
             this.lblPhong205.Text = "P205 ";
             this.lblPhong205.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong205.Click += new System.EventHandler(this.lblPhong201_Click);
+            this.lblPhong205.DoubleClick += new System.EventHandler(this.LblPhong201_DoubleClick);
+            this.lblPhong205.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong205.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // lblPhong201
             // 
@@ -1156,6 +1185,9 @@
             this.lblPhong201.Text = "P201 ";
             this.lblPhong201.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong201.Click += new System.EventHandler(this.lblPhong201_Click);
+            this.lblPhong201.DoubleClick += new System.EventHandler(this.LblPhong201_DoubleClick);
+            this.lblPhong201.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong201.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // tabTang3
             // 
@@ -1237,6 +1269,8 @@
             this.lblPhong304.Text = "P304 ";
             this.lblPhong304.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong304.Click += new System.EventHandler(this.LblPhong301_Click);
+            this.lblPhong304.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong304.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // lblPhong303
             // 
@@ -1251,6 +1285,8 @@
             this.lblPhong303.Text = "P303 ";
             this.lblPhong303.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong303.Click += new System.EventHandler(this.LblPhong301_Click);
+            this.lblPhong303.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong303.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // lblPhong302
             // 
@@ -1265,6 +1301,8 @@
             this.lblPhong302.Text = "P302 ";
             this.lblPhong302.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong302.Click += new System.EventHandler(this.LblPhong301_Click);
+            this.lblPhong302.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong302.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // lblPhong301
             // 
@@ -1279,6 +1317,8 @@
             this.lblPhong301.Text = "P301 ";
             this.lblPhong301.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong301.Click += new System.EventHandler(this.LblPhong301_Click);
+            this.lblPhong301.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
+            this.lblPhong301.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
             // ribbonPage3
             // 

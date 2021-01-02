@@ -31,15 +31,17 @@ namespace QL_PhongTro
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormThemKhachTro));
             this.gbQLKhachTro = new System.Windows.Forms.GroupBox();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.cbbPhong = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnDong = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.rbtnNu = new System.Windows.Forms.RadioButton();
             this.rbtnNam = new System.Windows.Forms.RadioButton();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCMND = new System.Windows.Forms.TextBox();
+            this.txtQueQuan = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtHoten = new System.Windows.Forms.TextBox();
             this.txtMaKhach = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,25 +50,23 @@ namespace QL_PhongTro
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gbQLKhachTro.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbQLKhachTro
             // 
             this.gbQLKhachTro.BackColor = System.Drawing.Color.Gainsboro;
-            this.gbQLKhachTro.Controls.Add(this.comboBox1);
+            this.gbQLKhachTro.Controls.Add(this.dtpNgaySinh);
+            this.gbQLKhachTro.Controls.Add(this.cbbPhong);
             this.gbQLKhachTro.Controls.Add(this.label8);
             this.gbQLKhachTro.Controls.Add(this.btnDong);
             this.gbQLKhachTro.Controls.Add(this.button1);
-            this.gbQLKhachTro.Controls.Add(this.textBox4);
             this.gbQLKhachTro.Controls.Add(this.rbtnNu);
             this.gbQLKhachTro.Controls.Add(this.rbtnNam);
-            this.gbQLKhachTro.Controls.Add(this.textBox7);
-            this.gbQLKhachTro.Controls.Add(this.textBox6);
-            this.gbQLKhachTro.Controls.Add(this.textBox3);
-            this.gbQLKhachTro.Controls.Add(this.textBox2);
+            this.gbQLKhachTro.Controls.Add(this.txtCMND);
+            this.gbQLKhachTro.Controls.Add(this.txtQueQuan);
+            this.gbQLKhachTro.Controls.Add(this.txtSDT);
+            this.gbQLKhachTro.Controls.Add(this.txtHoten);
             this.gbQLKhachTro.Controls.Add(this.txtMaKhach);
             this.gbQLKhachTro.Controls.Add(this.label7);
             this.gbQLKhachTro.Controls.Add(this.label6);
@@ -84,6 +84,61 @@ namespace QL_PhongTro
             this.gbQLKhachTro.TabStop = false;
             this.gbQLKhachTro.Text = "Thông Tin Khách Trọ";
             // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpNgaySinh.CustomFormat = "yyyy/MM/dd";
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(220, 166);
+            this.dtpNgaySinh.MaxDate = new System.DateTime(2021, 1, 10, 22, 33, 10, 0);
+            this.dtpNgaySinh.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(200, 26);
+            this.dtpNgaySinh.TabIndex = 2;
+            this.dtpNgaySinh.Value = new System.DateTime(2021, 1, 10, 0, 0, 0, 0);
+            // 
+            // cbbPhong
+            // 
+            this.cbbPhong.DropDownHeight = 90;
+            this.cbbPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbPhong.FormattingEnabled = true;
+            this.cbbPhong.IntegralHeight = false;
+            this.cbbPhong.Items.AddRange(new object[] {
+            "Phòng 101",
+            "Phòng 102",
+            "Phòng103",
+            "Phòng104",
+            "Phòng 105",
+            "Phòng 106",
+            "Phòng 107",
+            "Phòng 108",
+            "Phòng 201",
+            "Phòng 202",
+            "Phòng 203",
+            "Phòng 204",
+            "Phòng 205",
+            "Phòng 206",
+            "Phòng207",
+            "Phòng 208",
+            "Phòng 301",
+            "Phòng 302",
+            "Phòng 303",
+            "Phòng 304"});
+            this.cbbPhong.Location = new System.Drawing.Point(220, 427);
+            this.cbbPhong.MaxDropDownItems = 4;
+            this.cbbPhong.Name = "cbbPhong";
+            this.cbbPhong.Size = new System.Drawing.Size(168, 26);
+            this.cbbPhong.TabIndex = 8;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(61, 435);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 18);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Phòng";
+            // 
             // btnDong
             // 
             this.btnDong.Location = new System.Drawing.Point(403, 465);
@@ -93,6 +148,7 @@ namespace QL_PhongTro
             this.btnDong.TabIndex = 10;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.BtnDong_Click);
             // 
             // button1
             // 
@@ -103,19 +159,12 @@ namespace QL_PhongTro
             this.button1.TabIndex = 9;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(220, 168);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(168, 26);
-            this.textBox4.TabIndex = 2;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // rbtnNu
             // 
             this.rbtnNu.AutoSize = true;
-            this.rbtnNu.Location = new System.Drawing.Point(321, 216);
+            this.rbtnNu.Location = new System.Drawing.Point(340, 216);
             this.rbtnNu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbtnNu.Name = "rbtnNu";
             this.rbtnNu.Size = new System.Drawing.Size(48, 22);
@@ -136,47 +185,53 @@ namespace QL_PhongTro
             this.rbtnNam.Text = "Nam";
             this.rbtnNam.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // txtCMND
             // 
-            this.textBox7.Location = new System.Drawing.Point(220, 379);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(168, 26);
-            this.textBox7.TabIndex = 7;
+            this.txtCMND.Location = new System.Drawing.Point(220, 379);
+            this.txtCMND.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCMND.MaxLength = 9;
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(168, 26);
+            this.txtCMND.TabIndex = 7;
+            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCMND_KeyPress);
             // 
-            // textBox6
+            // txtQueQuan
             // 
-            this.textBox6.Location = new System.Drawing.Point(220, 322);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(168, 26);
-            this.textBox6.TabIndex = 6;
+            this.txtQueQuan.Location = new System.Drawing.Point(220, 322);
+            this.txtQueQuan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtQueQuan.Name = "txtQueQuan";
+            this.txtQueQuan.Size = new System.Drawing.Size(168, 26);
+            this.txtQueQuan.TabIndex = 6;
+            this.txtQueQuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQueQuan_KeyPress);
             // 
-            // textBox3
+            // txtSDT
             // 
-            this.textBox3.Location = new System.Drawing.Point(220, 265);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(168, 26);
-            this.textBox3.TabIndex = 5;
+            this.txtSDT.Location = new System.Drawing.Point(220, 265);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtSDT.MaxLength = 11;
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(168, 26);
+            this.txtSDT.TabIndex = 5;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSDT_KeyPress);
             // 
-            // textBox2
+            // txtHoten
             // 
-            this.textBox2.Location = new System.Drawing.Point(220, 108);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(303, 26);
-            this.textBox2.TabIndex = 1;
+            this.txtHoten.Location = new System.Drawing.Point(220, 108);
+            this.txtHoten.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtHoten.Name = "txtHoten";
+            this.txtHoten.Size = new System.Drawing.Size(303, 26);
+            this.txtHoten.TabIndex = 1;
+            this.txtHoten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtHoten_KeyPress);
             // 
             // txtMaKhach
             // 
-            this.txtMaKhach.Location = new System.Drawing.Point(220, 53);
+            this.txtMaKhach.Location = new System.Drawing.Point(220, 52);
             this.txtMaKhach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMaKhach.MaxLength = 5;
             this.txtMaKhach.Name = "txtMaKhach";
             this.txtMaKhach.Size = new System.Drawing.Size(168, 26);
             this.txtMaKhach.TabIndex = 0;
-            this.txtMaKhach.TextChanged += new System.EventHandler(this.TxtMaKhach_TextChanged);
-            this.txtMaKhach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtMaKhach_KeyDown);
+            this.txtMaKhach.WordWrap = false;
             this.txtMaKhach.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMaKhach_KeyPress);
             // 
             // label7
@@ -249,23 +304,6 @@ namespace QL_PhongTro
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Khách Trọ";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(61, 435);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 18);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Phòng";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(220, 427);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(168, 26);
-            this.comboBox1.TabIndex = 12;
-            // 
             // FormThemKhachTro
             // 
             this.Appearance.Options.UseFont = true;
@@ -291,10 +329,10 @@ namespace QL_PhongTro
         #endregion
 
         private System.Windows.Forms.GroupBox gbQLKhachTro;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCMND;
+        private System.Windows.Forms.TextBox txtQueQuan;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtHoten;
         private System.Windows.Forms.TextBox txtMaKhach;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -304,11 +342,11 @@ namespace QL_PhongTro
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDong;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.RadioButton rbtnNu;
         private System.Windows.Forms.RadioButton rbtnNam;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbPhong;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
     }
 }

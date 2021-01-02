@@ -1,4 +1,3 @@
-D:\CNPM\DoanCNPM\QL_PhongTro\obj\Debug\QL_PhongTro.csprojAssemblyReference.cache
 D:\CNPM\DoanCNPM\QL_PhongTro\obj\Debug\QL_PhongTro.FormCapNhat.resources
 D:\CNPM\DoanCNPM\QL_PhongTro\obj\Debug\QL_PhongTro.View.FormDoanhThu.resources
 D:\CNPM\DoanCNPM\QL_PhongTro\obj\Debug\QL_PhongTro.FormDoiMatKhau.resources
@@ -84,3 +83,4 @@ D:\CNPM\DoanCNPM\QL_PhongTro\bin\Debug\ClosedXML.xml
 D:\CNPM\DoanCNPM\QL_PhongTro\bin\Debug\DocumentFormat.OpenXml.xml
 D:\CNPM\DoanCNPM\QL_PhongTro\bin\Debug\ExcelNumberFormat.xml
 D:\CNPM\DoanCNPM\QL_PhongTro\obj\Debug\QL_PhongTro.csproj.ResolveComReference.cache
+D:\CNPM\DoanCNPM\QL_PhongTro\obj\Debug\QL_PhongTro.csprojAssemblyReference.cache

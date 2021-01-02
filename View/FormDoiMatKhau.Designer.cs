@@ -33,9 +33,9 @@ namespace QL_PhongTro
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtmkhientai = new System.Windows.Forms.TextBox();
+            this.txtmkmoi = new System.Windows.Forms.TextBox();
+            this.txtcapnhatmkmoi = new System.Windows.Forms.TextBox();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -67,63 +67,67 @@ namespace QL_PhongTro
             this.label3.TabIndex = 1;
             this.label3.Text = "Gõ lại mật khẩu mới";
             // 
-            // textBox1
+            // txtmkhientai
             // 
-            this.textBox1.Location = new System.Drawing.Point(204, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 26);
-            this.textBox1.TabIndex = 2;
+            this.txtmkhientai.Location = new System.Drawing.Point(181, 27);
+            this.txtmkhientai.Name = "txtmkhientai";
+            this.txtmkhientai.Size = new System.Drawing.Size(241, 26);
+            this.txtmkhientai.TabIndex = 0;
             // 
-            // textBox2
+            // txtmkmoi
             // 
-            this.textBox2.Location = new System.Drawing.Point(204, 106);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 26);
-            this.textBox2.TabIndex = 2;
+            this.txtmkmoi.Location = new System.Drawing.Point(181, 106);
+            this.txtmkmoi.Name = "txtmkmoi";
+            this.txtmkmoi.PasswordChar = '*';
+            this.txtmkmoi.Size = new System.Drawing.Size(241, 26);
+            this.txtmkmoi.TabIndex = 1;
             // 
-            // textBox3
+            // txtcapnhatmkmoi
             // 
-            this.textBox3.Location = new System.Drawing.Point(204, 180);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(241, 26);
-            this.textBox3.TabIndex = 2;
+            this.txtcapnhatmkmoi.Location = new System.Drawing.Point(181, 181);
+            this.txtcapnhatmkmoi.Name = "txtcapnhatmkmoi";
+            this.txtcapnhatmkmoi.PasswordChar = '*';
+            this.txtcapnhatmkmoi.Size = new System.Drawing.Size(241, 26);
+            this.txtcapnhatmkmoi.TabIndex = 2;
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(328, 279);
+            this.btnDong.Location = new System.Drawing.Point(305, 311);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(117, 67);
-            this.btnDong.TabIndex = 3;
+            this.btnDong.TabIndex = 4;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.BtnDong_Click);
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(181, 279);
+            this.btnLuu.Location = new System.Drawing.Point(181, 311);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(117, 67);
             this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu thay đổi";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.BtnLuu_Click);
             // 
             // FormDoiMatKhau
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 424);
+            this.ClientSize = new System.Drawing.Size(438, 360);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnDong);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtcapnhatmkmoi);
+            this.Controls.Add(this.txtmkmoi);
+            this.Controls.Add(this.txtmkhientai);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FormDoiMatKhau.IconOptions.Image")));
-            this.MaximumSize = new System.Drawing.Size(491, 464);
-            this.MinimumSize = new System.Drawing.Size(491, 464);
+            this.MaximumSize = new System.Drawing.Size(440, 400);
+            this.MinimumSize = new System.Drawing.Size(440, 400);
             this.Name = "FormDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi Mật Khẩu";
@@ -138,9 +142,9 @@ namespace QL_PhongTro
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtmkhientai;
+        private System.Windows.Forms.TextBox txtmkmoi;
+        private System.Windows.Forms.TextBox txtcapnhatmkmoi;
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.Button btnLuu;
     }

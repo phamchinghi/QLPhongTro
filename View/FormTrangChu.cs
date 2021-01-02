@@ -30,8 +30,8 @@ namespace QL_PhongTro
         }
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
-            //FormLogin frmLogin = new FormLogin();
-            //frmLogin.ShowDialog();
+            FormLogin frmLogin = new FormLogin();
+            frmLogin.ShowDialog();
             skin();
             try
             {
@@ -52,7 +52,7 @@ namespace QL_PhongTro
                     int index = dgvTrangChu.Rows.Add();//them vao tung vi tri
                     //xac dinh vi tri cac cot de them du lieu
                 dgvTrangChu.Rows[index].Cells[0].Value = item.Mã_KH;
-                dgvTrangChu.Rows[index].Cells[1].Value = item.Mã_phòng;
+                dgvTrangChu.Rows[index].Cells[1].Value = item.Mã_phòng.TrimEnd();
                 dgvTrangChu.Rows[index].Cells[2].Value = item.Khách_hàng.Tên_KH;
                 dgvTrangChu.Rows[index].Cells[3].Value = item.Khách_hàng.Năm_sinh.ToShortDateString();
                 dgvTrangChu.Rows[index].Cells[4].Value = item.Khách_hàng.Sđt;
@@ -70,7 +70,7 @@ namespace QL_PhongTro
                 if(item.Mã_phòng == lbl.Text)
                 {
                     dgvTrangChu.Rows[index].Cells[0].Value = item.Mã_KH;
-                    dgvTrangChu.Rows[index].Cells[1].Value = item.Mã_phòng;
+                    dgvTrangChu.Rows[index].Cells[1].Value = item.Mã_phòng.TrimEnd();
                     dgvTrangChu.Rows[index].Cells[2].Value = item.Khách_hàng.Tên_KH;
                     dgvTrangChu.Rows[index].Cells[3].Value = item.Khách_hàng.Năm_sinh.ToShortDateString();
                     dgvTrangChu.Rows[index].Cells[4].Value = item.Khách_hàng.Sđt;
@@ -84,14 +84,11 @@ namespace QL_PhongTro
                 }
             }
         }
-        private void checkDataPhong(List<HOPDONG> hopDongs, Label lbl)
+        private void checkDataPhong(List<Hóa_đơn> hoadon, Label lbl)
         {
-            foreach(var item in hopDongs)
+            foreach(var item in hoadon)
             {
-                if(dgvTrangChu.Rows.Count > 0)
-                {
-
-                }
+                
             }
         }
         private void lblPhong101_Click(object sender, EventArgs e)
@@ -383,16 +380,81 @@ namespace QL_PhongTro
         {
 
         }
-
-        private void LblPhong101_DoubleClick(object sender, EventArgs e)
-        {
-            FormChiTietPhong frmChiTietPhong = new FormChiTietPhong();
-            frmChiTietPhong.ShowDialog();
-        }
-
-        private void BarButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void checkMaPhong(Label lbl)
         {
             //Hiện form thêm thiết bị
+            FormChiTietPhong frmChiTietPhong = new FormChiTietPhong();
+            frmChiTietPhong.Show();
+            frmChiTietPhong.Text = frmChiTietPhong.Text + " " + lbl.Text;
+        }
+        private void LblPhong101_DoubleClick(object sender, EventArgs e)
+        {
+            Label b = sender as Label;
+            switch (b.Text)
+            {
+                case "P101 ":
+                    checkMaPhong( b);
+                    break;
+                case "P102 ":
+                    checkMaPhong( b);
+                    break;
+                case "P103 ":
+                    checkMaPhong(b);
+                    break;
+                case "P104 ":
+                    checkMaPhong( b);
+                    break;
+                case "P105 ":
+                    checkMaPhong( b);
+                    break;
+                case "P106 ":
+                    checkMaPhong( b);
+                    break;
+                case "P107 ":
+                    checkMaPhong( b);
+                    break;
+                case "P108 ":
+                    checkMaPhong( b);
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void LblPhong201_DoubleClick(object sender, EventArgs e)
+        {
+            Label b = sender as Label;
+            switch (b.Text)
+            {
+                case "P201 ":
+                    checkMaPhong(b);
+                    break;
+                case "P202 ":
+                    checkMaPhong(b);
+                    break;
+                case "P203 ":
+                    checkMaPhong(b);
+                    break;
+                case "P204 ":
+                    checkMaPhong(b);
+                    break;
+                case "P205 ":
+                    checkMaPhong(b);
+                    break;
+                case "P206 ":
+                    checkMaPhong(b);
+                    break;
+                case "P207 ":
+                    checkMaPhong(b);
+                    break;
+                case "P208 ":
+                    checkMaPhong(b);
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void BarButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
             FormThemThietBi frmThemThietBi = new FormThemThietBi();
             frmThemThietBi.Show();
         }
@@ -416,5 +478,12 @@ namespace QL_PhongTro
             frmCapnhat.ShowDialog();
         }
 
+        private void BarButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormDoiMatKhau frmDoiMatKhau = new FormDoiMatKhau();
+            frmDoiMatKhau.ShowDialog();
+        }
+
+       
     }
 }

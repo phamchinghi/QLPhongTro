@@ -151,10 +151,10 @@
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Phòng>()
-                .Property(e => e.Mã_KH)
-                .IsFixedLength()
-                .IsUnicode(false);
+            //modelBuilder.Entity<Phòng>()
+            //    .Property(e => e.Mã_KH)
+            //    .IsFixedLength()
+            //    .IsUnicode(false);
 
             modelBuilder.Entity<Phòng>()
                 .HasMany(e => e.CT_TrangBi)

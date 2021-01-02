@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QL_PhongTro.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace QL_PhongTro
 {
     public partial class FormChiTietPhong : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        DB_QLPhongTro DB = new DB_QLPhongTro();
         public FormChiTietPhong()
         {
             InitializeComponent();
@@ -22,20 +24,21 @@ namespace QL_PhongTro
             DevExpress.LookAndFeel.DefaultLookAndFeel themes = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             themes.LookAndFeel.SkinName = "Metropolis";
         }
-        public void setLblGiaPhong(Label label)
-        {
-            lblTienPhong.Text = label.Text;
-        }
+
         private void FormChiTietPhong_Load(object sender, EventArgs e)
         {
             skin();
             cbXeMay.SelectedIndex = 0;
             cbXeMay2.SelectedIndex = cbXeMay.SelectedIndex;
-
             //Lay thang cua he thong gan vao groupbox
             DateTime mon = DateTime.Now;
             gbThangSau.Text = "Tháng " + mon.Month.ToString();
             gbThangTruoc.Text = "Tháng " + (mon.Month - 1).ToString();
+            bbtnThanhToan.Enabled = false;
+            bbtnThuePhong.Enabled = false;
+            bbtnGiuCho.Enabled = false;
+            bbtnLuu.Enabled = false;
+            bbtnTraPhong.Enabled = false;
         }
 
         private void Label8_Click(object sender, EventArgs e)

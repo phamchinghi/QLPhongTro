@@ -76,12 +76,9 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.lblTienPhong = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.gbThangTruoc.SuspendLayout();
             this.gbThangSau.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -532,34 +529,11 @@
             this.textBox7.Size = new System.Drawing.Size(173, 23);
             this.textBox7.TabIndex = 8;
             // 
-            // lblTienPhong
-            // 
-            this.lblTienPhong.AutoSize = true;
-            this.lblTienPhong.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lblTienPhong.Location = new System.Drawing.Point(753, 206);
-            this.lblTienPhong.Name = "lblTienPhong";
-            this.lblTienPhong.Size = new System.Drawing.Size(83, 21);
-            this.lblTienPhong.TabIndex = 0;
-            this.lblTienPhong.Text = "3,000,000";
-            this.lblTienPhong.Click += new System.EventHandler(this.Label8_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(718, 206);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // FormChiTietPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 719);
-            this.Controls.Add(this.lblTienPhong);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbThangSau);
             this.Controls.Add(this.gbThangTruoc);
             this.Controls.Add(this.ribbonStatusBar);
@@ -571,14 +545,13 @@
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Chi tiết phòng 101";
+            this.Text = "Chi tiết phòng";
             this.Load += new System.EventHandler(this.FormChiTietPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.gbThangTruoc.ResumeLayout(false);
             this.gbThangTruoc.PerformLayout();
             this.gbThangSau.ResumeLayout(false);
             this.gbThangSau.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -603,13 +576,11 @@
         private DevExpress.XtraBars.BarButtonItem bbtnDong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private System.Windows.Forms.Label lblTienPhong;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbXeMay;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;

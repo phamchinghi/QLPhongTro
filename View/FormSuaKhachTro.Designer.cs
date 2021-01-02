@@ -54,7 +54,7 @@ namespace QL_PhongTro
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbMaPhong = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -152,6 +152,7 @@ namespace QL_PhongTro
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.textBox5);
@@ -283,19 +284,38 @@ namespace QL_PhongTro
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ tên";
             // 
-            // comboBox1
+            // cbbMaPhong
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbbMaPhong.DropDownHeight = 100;
+            this.cbbMaPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMaPhong.FormattingEnabled = true;
+            this.cbbMaPhong.ItemHeight = 16;
+            this.cbbMaPhong.Items.AddRange(new object[] {
             "P101 ",
             "P102 ",
             "P103",
             "P104",
-            "P105 "});
-            this.comboBox1.Location = new System.Drawing.Point(752, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(136, 24);
-            this.comboBox1.TabIndex = 3;
+            "P105 ",
+            "P106",
+            "P107",
+            "P108",
+            "P201",
+            "P202",
+            "P203",
+            "P204",
+            "P205",
+            "P206",
+            "P207",
+            "P208",
+            "P301",
+            "P302",
+            "P303",
+            "P304"});
+            this.cbbMaPhong.Location = new System.Drawing.Point(752, 62);
+            this.cbbMaPhong.MaxDropDownItems = 4;
+            this.cbbMaPhong.Name = "cbbMaPhong";
+            this.cbbMaPhong.Size = new System.Drawing.Size(136, 24);
+            this.cbbMaPhong.TabIndex = 3;
             // 
             // label6
             // 
@@ -314,7 +334,7 @@ namespace QL_PhongTro
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(963, 510);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbMaPhong);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnSua);
@@ -361,7 +381,7 @@ namespace QL_PhongTro
         private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn quequan;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmnd;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbMaPhong;
         private System.Windows.Forms.Label label6;
     }
 }

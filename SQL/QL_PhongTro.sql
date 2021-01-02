@@ -21,6 +21,10 @@ CREATE TABLE [Phòng]
 )
 go
 
+alter table [Phòng]
+	add [Giá phòng] money
+
+
 -- Create indexes for table Phòng
 
 CREATE INDEX [IX_Thuộc] ON [Phòng] ([Mã loại phòng])
@@ -86,6 +90,14 @@ CREATE TABLE [Khách hàng]
  [Giới tính] Nvarchar(4) NULL
 )
 go
+
+--Check không cho nhập chữ cái vào column sdt
+ALTER TABLE [Khách hàng]
+	ADD CONSTRAINT ck_DIENTHOAI CHECK (Sđt like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' 
+									OR Sđt LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
+									OR Sđt LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
+									OR Sđt LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+
 select * from [Khách hàng]
 insert into [Khách hàng]([Mã KH],[Tên KH],[Năm sinh],Sđt,CMND,[Quê quán],[Giới tính]) values 
 ('KH09',N'Nhã Mèo',14/3/2000,'0123456789','365987421',N'Bến Tre','Nam')
@@ -122,6 +134,17 @@ CREATE TABLE [Hóa đơn]
 )
 go
 
+
+alter table [Hóa đơn] 
+ add [Ngày lập HD] date
+alter table [Hóa đơn] 
+ add [Số điện tháng trước] float
+ alter table [Hóa đơn] 
+ add [Số điện tháng sau] float
+ alter table [Hóa đơn] 
+ add [Số nước tháng trước] float
+ alter table [Hóa đơn] 
+ add [Số nước tháng sau] float
 -- Create indexes for table Hóa đơn
 
 CREATE INDEX [IX_Lập] ON [Hóa đơn] ([MaNV])

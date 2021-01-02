@@ -27,6 +27,8 @@ namespace QL_PhongTro.Data
 
         public virtual DỊch_vụ DỊch_vụ { get; set; }
 
+        public DateTime Ngày_lập_HD { get; set; }
+
         public virtual HOPDONG HOPDONG { get; set; }
 
         public virtual Nhân_viên_QL Nhân_viên_QL { get; set; }
