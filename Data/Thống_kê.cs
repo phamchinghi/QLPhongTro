@@ -14,10 +14,9 @@ namespace QL_PhongTro.Data
         [StringLength(5)]
         public string Số_phiếu_TK { get; set; }
 
-        [Required]
-        [StringLength(5)]
-        public string MaNV { get; set; }
+        [Column("Số hóa đơn")]
+        public int? Số_hóa_đơn { get; set; }
 
-        public virtual Nhân_viên_QL Nhân_viên_QL { get; set; }
+        public virtual Hóa_đơn Hóa_đơn { get; set; }
     }
 }

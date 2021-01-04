@@ -19,11 +19,12 @@ namespace QL_PhongTro.Data
         public string Ma_thiết_bị { get; set; }
 
         [Column("SL trang bi")]
-        public int? SL_trang_bi { get; set; }
+        public int SL_trang_bi { get; set; }
 
-        [Column("Ngay TB")]
-        public DateTime? Ngay_TB { get; set; }
+        [Column("Ngày trang bị", TypeName = "date")]
+        public DateTime Ngày_trang_bị { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string DVT { get; set; }
 

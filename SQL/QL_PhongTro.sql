@@ -1,6 +1,11 @@
-﻿/*
+﻿create database QuanLyPhongTro
+go
+use QuanLyPhongTro
+go
+
+/*
 Created: 18/12/2020
-Modified: 06/01/2021
+Modified: 09/01/2021
 Model: Microsoft SQL Server 2017
 Database: MS SQL Server 2017
 */
@@ -9,7 +14,6 @@ Database: MS SQL Server 2017
 -- Create tables section -------------------------------------------------
 
 -- Table Phòng
-
 CREATE TABLE [Phòng]
 (
  [Mã phòng] Char(5) NOT NULL,
@@ -17,267 +21,221 @@ CREATE TABLE [Phòng]
  [SucChua] Int NOT NULL,
  [DTSD] Int NOT NULL,
  [Huong] Char(4) NULL,
- [Mã KH] Char(5) NULL
+ [Giá phòng] Int NOT NULL default 0,
+ [Trạng thái] Nvarchar(10) NOT NULL--đã thuê, còn trống, đã cọc
 )
 go
 
-alter table [Phòng]
-	add [Giá phòng] money
-
-
--- Create indexes for table Phòng
-
-CREATE INDEX [IX_Thuộc] ON [Phòng] ([Mã loại phòng])
+insert into dbo.Phòng values('P101','T01',5,20,'Nam',2500000,N'Trống')
 go
-
-CREATE INDEX [IX_Relationship25] ON [Phòng] ([Mã KH])
-go
-
 -- Add keys for table Phòng
 
 ALTER TABLE [Phòng] ADD CONSTRAINT [PK_Phòng] PRIMARY KEY ([Mã phòng])
 go
 
--- Table Thống kê
 
+-- Table Thống kê
 CREATE TABLE [Thống kê]
 (
  [Số phiếu TK] Char(5) NOT NULL,
- [MaNV] Char(5) NOT NULL
+ [Số hóa đơn] Int NULL
 )
 go
-
--- Create indexes for table Thống kê
-
-CREATE INDEX [IX_Lập1] ON [Thống kê] ([MaNV])
-go
-
 -- Add keys for table Thống kê
 
 ALTER TABLE [Thống kê] ADD CONSTRAINT [PK_Thống kê] PRIMARY KEY ([Số phiếu TK])
 go
 
--- Table Thiết bị
 
+-- Table Thiết bị
 CREATE TABLE [Thiết bị]
 (
  [Ma thiết bị] Char(5) NOT NULL,
- [TenTB] Nvarchar(30) NULL,
+ [TenTB] Nvarchar(30) NOT NULL,
  [Mã loại TB] Char(5) NOT NULL
 )
 go
-
--- Create indexes for table Thiết bị
-
-CREATE INDEX [IX_Thuộc 2] ON [Thiết bị] ([Mã loại TB])
-go
-
 -- Add keys for table Thiết bị
 
 ALTER TABLE [Thiết bị] ADD CONSTRAINT [PK_Thiết bị] PRIMARY KEY ([Ma thiết bị])
 go
 
--- Table Khách hàng
 
+-- Table Khách hàng
 CREATE TABLE [Khách hàng]
 (
- [Mã KH] Char(5) NOT NULL,
- [Tên KH] Nvarchar(20) NULL,
- [Năm sinh] Datetime NULL,
- [Sđt] Char(10) NULL,
- [CMND] Char(9) NULL,
- [Quê quán] Nvarchar(50) NULL,
- [Giới tính] Nvarchar(4) NULL
+ [Mã KH] Char(5)  NOT NULL,
+ [Tên KH] Nvarchar(30) NOT NULL,
+ [Năm sinh] Date NOT NULL,
+ [Sđt] Char(10) NOT NULL,
+ [CMND] Char(9) NOT NULL,
+ [Quê quán] Nvarchar(50) NOT NULL,
+ [Giới tính] bit NOT NULL
 )
 go
-
---Check không cho nhập chữ cái vào column sdt
-ALTER TABLE [Khách hàng]
-	ADD CONSTRAINT ck_DIENTHOAI CHECK (Sđt like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' 
-									OR Sđt LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
-									OR Sđt LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
-									OR Sđt LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
-
-select * from [Khách hàng]
-insert into [Khách hàng]([Mã KH],[Tên KH],[Năm sinh],Sđt,CMND,[Quê quán],[Giới tính]) values 
-('KH09',N'Nhã Mèo',14/3/2000,'0123456789','365987421',N'Bến Tre','Nam')
-
-alter table [Khách hàng]
-alter column [Năm sinh] date
 -- Add keys for table Khách hàng
 
 ALTER TABLE [Khách hàng] ADD CONSTRAINT [PK_Khách hàng] PRIMARY KEY ([Mã KH])
 go
+insert into dbo.[Khách hàng] 
+	values('KH12','djfhkj','12/5/2000',1962575203,369821452,'BT',0)
+go
 
+--Tạo view cho ds khách trọ
+create view DSKhachHang as
+	select [Mã KH],[Tên KH],[Năm sinh],[Sđt],IIF([Giới tính] = 0,'NAM', N'Nữ') AS [Giới tính],[Quê quán], CMND from dbo.[Khách hàng]
+go
+
+--tạo view cho trang chủ
+create view Trangchu as
+select dbo.[Khách hàng].[Mã KH],[Mã phòng],[Tên KH],[Năm sinh],[Sđt],IIF([Giới tính] = 0,'NAM', N'Nữ') AS [Giới tính],[Quê quán], CMND
+	from dbo.[Khách hàng] inner join dbo.HOPDONG on dbo.[Khách hàng].[Mã KH] = dbo.HOPDONG.[Mã KH]
+go
+select * from Trangchu
+go
+--tạo proc
+create proc proc_ThemKH(@makh Char(5),@tenkh Nvarchar(30), @namsinh Date,@Sdt Char(10),@CMND Char(9),@quequan Nvarchar(50),@gioitinh bit) as
+	insert into dbo.[Khách hàng] values(@makh,@tenkh,@namsinh,@Sdt,@CMND,@quequan,@gioitinh)
+go
+exec proc_ThemKH 'KH12' ,'skudfg','12/3/2000','0953214875','Nam','BT','126587932'
+
+select * from DSKhachHang
 -- Table Loại thiết bị
-
 CREATE TABLE [Loại thiết bị]
 (
  [Mã loại TB] Char(5) NOT NULL,
- [Tên loại TB] Nvarchar(30) NULL
+ [Tên loại TB] Nvarchar(30) NOT NULL
 )
 go
-
 -- Add keys for table Loại thiết bị
 
 ALTER TABLE [Loại thiết bị] ADD CONSTRAINT [PK_Loại thiết bị] PRIMARY KEY ([Mã loại TB])
 go
 
--- Table Hóa đơn
 
+-- Table Hóa đơn
 CREATE TABLE [Hóa đơn]
 (
- [Số hóa đơn] Char(5)  NOT NULL,
- [MaNV] Char(5) NOT NULL,
- [Mã DV] Char(5) NULL,
- [SoHD] Char(5) NULL
+ [Số hóa đơn] Int IDENTITY NOT NULL,
+ [Mã DV] Char(5) NOT NULL,
+ [SoHD] Int NOT NULL,
+ [Số điện tháng trước] Int NOT NULL,
+ [Số điện tháng này] Int NOT NULL,
+ [Số nước tháng trước] Int NOT NULL,
+ [Số nước tháng này] Int NOT NULL,
+ [Tổng tiền] Int NOT NULL,
+ [Ngày lập hóa đơn] Date NOT NULL
 )
 go
-
-
-alter table [Hóa đơn] 
- add [Ngày lập HD] date
-alter table [Hóa đơn] 
- add [Số điện tháng trước] float
- alter table [Hóa đơn] 
- add [Số điện tháng sau] float
- alter table [Hóa đơn] 
- add [Số nước tháng trước] float
- alter table [Hóa đơn] 
- add [Số nước tháng sau] float
--- Create indexes for table Hóa đơn
-
-CREATE INDEX [IX_Lập] ON [Hóa đơn] ([MaNV])
-go
-
-CREATE INDEX [IX_Relationship23] ON [Hóa đơn] ([Mã DV])
-go
-
-CREATE INDEX [IX_Relationship27] ON [Hóa đơn] ([SoHD])
-go
-
 -- Add keys for table Hóa đơn
 
 ALTER TABLE [Hóa đơn] ADD CONSTRAINT [PK_Hóa đơn] PRIMARY KEY ([Số hóa đơn])
 go
 
--- Table Loại phòng
 
+-- Table Loại phòng
 CREATE TABLE [Loại phòng]
 (
  [Mã loại phòng] Char(5) NOT NULL,
- [TenLP] Nvarchar(20) NULL
+ [TenLP] Nvarchar(20) NOT NULL
 )
 go
 
+insert into dbo.[Loại phòng] values('T01',N'Tầng 1')
+go
 -- Add keys for table Loại phòng
 
 ALTER TABLE [Loại phòng] ADD CONSTRAINT [PK_Loại phòng] PRIMARY KEY ([Mã loại phòng])
 go
-
--- Table Nhân viên QL
-
-CREATE TABLE [Nhân viên QL]
-(
- [MaNV] Char(5) NOT NULL,
- [Tên NV] Nvarchar(20) NULL
-)
-go
-
--- Add keys for table Nhân viên QL
-
-ALTER TABLE [Nhân viên QL] ADD CONSTRAINT [PK_Nhân viên QL] PRIMARY KEY ([MaNV])
-go
-
 -- Table DỊch vụ
-
 CREATE TABLE [DỊch vụ]
 (
  [Mã DV] Char(5) NOT NULL,
- [Tên DV] Nvarchar(20) NULL,
- [DVT] Nvarchar(10) NULL,
- [Giá DV] Money NOT NULL
+ [Tên DV] Nvarchar(20) NOT NULL,
+ [DVT] Nvarchar(10) NOT NULL,
+ [Giá DV] Int NOT NULL
 )
 go
-
 -- Add keys for table DỊch vụ
 
 ALTER TABLE [DỊch vụ] ADD CONSTRAINT [PK_DỊch vụ] PRIMARY KEY ([Mã DV])
 go
 
--- Table Tài khoản
 
+-- Table Tài khoản
 CREATE TABLE [Tài khoản]
 (
  [User name] Nvarchar(20) NOT NULL,
  [Password] Nvarchar(20) NOT NULL,
- [MaNV] Char(5) NULL
+ [Tên người dùng] Nvarchar(30) NOT NULL
 )
 go
-
--- Create indexes for table Tài khoản
-
-CREATE INDEX [IX_Relationship35] ON [Tài khoản] ([MaNV])
-go
-
 -- Add keys for table Tài khoản
 
 ALTER TABLE [Tài khoản] ADD CONSTRAINT [PK_Tài khoản] PRIMARY KEY ([User name])
 go
 
--- Table CT_TrangBi
+insert into dbo.[Tài khoản]([User name], Password,[Tên người dùng])
+	values('nghi','nghi',N'Phạm Chí Nghị')
+go
 
+CREATE TRIGGER [Trigger1]
+  ON [Tài khoản]
+  AFTER INSERT
+  AS
+go
+
+CREATE PROC _GetAccount
+@userName nvarchar(20),
+@password nvarchar(20)
+AS 
+BEGIN
+	SELECT * FROM dbo.[Tài khoản] WHERE [User name] = @userName and [Password] = @password
+END
+go
+
+exec dbo._GetAccount @username = 'nghi', @password = 'nghi'
+go
+
+-- Table CT_TrangBi
 CREATE TABLE [CT_TrangBi]
 (
  [Mã phòng] Char(5) NOT NULL,
  [Ma thiết bị] Char(5) NOT NULL,
- [SL trang bi] Int DEFAULT 0 NULL,
- [Ngay TB] Datetime NULL,
- [DVT] Nvarchar(10) NULL
+ [SL trang bi] Int DEFAULT 0 NOT NULL,
+ [Ngày trang bị] Date NOT NULL,
+ [DVT] Nvarchar(10) NOT NULL
 )
 go
-
 -- Add keys for table CT_TrangBi
 
 ALTER TABLE [CT_TrangBi] ADD CONSTRAINT [PK_CT_TrangBi] PRIMARY KEY ([Mã phòng],[Ma thiết bị])
 go
 
--- Table HOPDONG
 
+-- Table HOPDONG
 CREATE TABLE [HOPDONG]
 (
- [SoHD] Char(5)  NOT NULL,
- [NgayLapHD] Datetime NULL,
- [ThoiHanHD] Datetime NULL,
- [Mã KH] Char(5) NULL,
- [Mã phòng] Char(5) NULL,
- [MaNV] Char(5) NULL
+ [SoHD] Int IDENTITY NOT NULL,
+ [Mã KH] Char(5) NOT NULL,
+ [Mã phòng] Char(5) NOT NULL,
+ [NgayLapHD] Date NOT NULL,
+ [NgayhethanHD] Date NOT NULL
 )
 go
-alter table [HOPDONG]
-alter column [ThoiHanHD] date
+alter table HOPDONG
+ alter column [SoHD] int IDENTITY(1,1)
 
-set dateformat dmy
--- Create indexes for table HOPDONG
-
-CREATE INDEX [IX_Relationship25] ON [HOPDONG] ([Mã KH])
+insert into dbo.HOPDONG values('KH12','P101','12/12/2019','12/12/2020')
 go
-
-CREATE INDEX [IX_Relationship26] ON [HOPDONG] ([Mã phòng])
-go
-
-CREATE INDEX [IX_Relationship28] ON [HOPDONG] ([MaNV])
-go
-
 -- Add keys for table HOPDONG
 
 ALTER TABLE [HOPDONG] ADD CONSTRAINT [PK_HOPDONG] PRIMARY KEY ([SoHD])
 go
 
--- Create foreign keys (relationships) section ------------------------------------------------- 
 
 
-ALTER TABLE [Thiết bị] ADD CONSTRAINT [Thuộc 2] FOREIGN KEY ([Mã loại TB]) REFERENCES [Loại thiết bị] ([Mã loại TB]) ON UPDATE NO ACTION ON DELETE NO ACTION
+ALTER TABLE [Thiết bị] ADD CONSTRAINT [Thuộc 2] FOREIGN KEY ([Mã loại TB]) REFERENCES [Loại thiết bị] ([Mã loại TB]) ON UPDATE NO ACTION  ON DELETE NO ACTION
 go
 
 
@@ -285,31 +243,19 @@ ALTER TABLE [Phòng] ADD CONSTRAINT [Thuộc] FOREIGN KEY ([Mã loại phòng]) 
 go
 
 
-ALTER TABLE [Thống kê] ADD CONSTRAINT [Lập1] FOREIGN KEY ([MaNV]) REFERENCES [Nhân viên QL] ([MaNV]) ON UPDATE NO ACTION ON DELETE NO ACTION
-go
-
-
-ALTER TABLE [Hóa đơn] ADD CONSTRAINT [Lập] FOREIGN KEY ([MaNV]) REFERENCES [Nhân viên QL] ([MaNV]) ON UPDATE NO ACTION ON DELETE NO ACTION
-go
-
-
-ALTER TABLE [Tài khoản] ADD CONSTRAINT [Có] FOREIGN KEY ([MaNV]) REFERENCES [Nhân viên QL] ([MaNV]) ON UPDATE NO ACTION ON DELETE NO ACTION
-go
-
-
 ALTER TABLE [Hóa đơn] ADD CONSTRAINT [nằm trong] FOREIGN KEY ([Mã DV]) REFERENCES [DỊch vụ] ([Mã DV]) ON UPDATE NO ACTION ON DELETE NO ACTION
 go
 
 
-ALTER TABLE [CT_TrangBi] ADD CONSTRAINT [Relationship23] FOREIGN KEY ([Mã phòng]) REFERENCES [Phòng] ([Mã phòng]) ON UPDATE NO ACTION ON DELETE NO ACTION
+ALTER TABLE [CT_TrangBi] ADD CONSTRAINT [co] FOREIGN KEY ([Mã phòng]) REFERENCES [Phòng] ([Mã phòng]) ON UPDATE NO ACTION ON DELETE NO ACTION
 go
 
 
-ALTER TABLE [CT_TrangBi] ADD CONSTRAINT [Relationship24] FOREIGN KEY ([Ma thiết bị]) REFERENCES [Thiết bị] ([Ma thiết bị]) ON UPDATE NO ACTION ON DELETE NO ACTION
+ALTER TABLE [CT_TrangBi] ADD CONSTRAINT [co2] FOREIGN KEY ([Ma thiết bị]) REFERENCES [Thiết bị] ([Ma thiết bị]) ON UPDATE NO ACTION ON DELETE NO ACTION
 go
 
 
-ALTER TABLE [HOPDONG] ADD CONSTRAINT [Lập2] FOREIGN KEY ([Mã KH]) REFERENCES [Khách hàng] ([Mã KH]) ON UPDATE NO ACTION ON DELETE NO ACTION
+ALTER TABLE [HOPDONG] ADD CONSTRAINT [Lập] FOREIGN KEY ([Mã KH]) REFERENCES [Khách hàng] ([Mã KH]) ON UPDATE NO ACTION ON DELETE Cascade
 go
 
 
@@ -321,11 +267,7 @@ ALTER TABLE [Hóa đơn] ADD CONSTRAINT [Có1] FOREIGN KEY ([SoHD]) REFERENCES [
 go
 
 
-ALTER TABLE [HOPDONG] ADD CONSTRAINT [Ký] FOREIGN KEY ([MaNV]) REFERENCES [Nhân viên QL] ([MaNV]) ON UPDATE NO ACTION ON DELETE NO ACTION
-go
-
-
-ALTER TABLE [Phòng] ADD CONSTRAINT [Relationship25] FOREIGN KEY ([Mã KH]) REFERENCES [Khách hàng] ([Mã KH]) ON UPDATE NO ACTION ON DELETE NO ACTION
+ALTER TABLE [Thống kê] ADD CONSTRAINT [tk] FOREIGN KEY ([Số hóa đơn]) REFERENCES [Hóa đơn] ([Số hóa đơn]) ON UPDATE NO ACTION ON DELETE NO ACTION
 go
 
 

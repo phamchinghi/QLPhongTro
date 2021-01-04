@@ -29,22 +29,22 @@ namespace QL_PhongTro.Data
 
         public int DTSD { get; set; }
 
-        public decimal Giá_phòng { get; set; }
-
         [StringLength(4)]
         public string Huong { get; set; }
 
-        //[Column("Mã KH")]
-        //[StringLength(5)]
-        //public string Mã_KH { get; set; }
+        [Column("Giá phòng")]
+        public int Giá_phòng { get; set; }
+
+        [Column("Trạng thái")]
+        [Required]
+        [StringLength(10)]
+        public string Trạng_thái { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_TrangBi> CT_TrangBi { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
-
-        public virtual Khách_hàng Khách_hàng { get; set; }
 
         public virtual Loại_phòng Loại_phòng { get; set; }
     }

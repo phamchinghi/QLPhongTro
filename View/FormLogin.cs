@@ -50,50 +50,57 @@ namespace QL_PhongTro
         private void button2_Click(object sender, EventArgs e)
         {
             List<Tài_khoản> listTaiKhoan = DB.Tài_khoản.ToList();
-            if (txtUserName.Text == " " || txtpassword.Text == "")
+            if (txtUserName.Text == " " || txtpassword.Text == " ")
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin", "Note", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                //for(int i = 0; i < listTaiKhoan.Count; i++)
-                //{
-                //    if (DB.Tài_khoản.ToString() == txtUserName.Text && DB.Tài_khoản.ToString() == txtpassword.Text)
-                //    {
-                //        this.Close();
-                //    }
-                //    else
-                //    {
-                //        txtUserName.Clear();
-                //        txtpassword.Clear();
-                //        txtUserName.Focus();
-                //    }
-                //}
-                foreach (var item in listTaiKhoan)
+                if (checkLogin(txtUserName.Text,txtpassword.Text))
                 {
-                    if (item.User_name == txtUserName.Text && item.Password == txtpassword.Text)
-                    {
-                        this.Close();
-                        break;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sai mật khẩu", "Note", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txtUserName.Clear();
-                        txtpassword.Clear();
-                        txtUserName.Focus();
-                        break;
-                    }
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Sai mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtUserName.Clear();
+                    txtpassword.Clear();
+                    txtUserName.Focus();
                 }
             }
         }
-
+        bool checkLogin(string userName, string password)
+        {
+            string query = "exec dbo._GetAccount @username = '" + userName +"', @password = '" + password + "' ";//lấy text của username và password để thực thi duyệt ở sql
+            DataConnection.Instance.ExcData(query);
+            DataTable result =  DataConnection.Instance.readData(query);
+            return result.Rows.Count > 0;//trả về số dòng đúng dữ liệu
+        }
 
         private void PictureBox4_Click(object sender, EventArgs e)
         {
 
         }
+        private void checkUsername()
+        {
 
+            //if (txtUserName.TextLength >= 10)
+            //{
+            //    txtUserName.BackColor = Color.LawnGreen;
+            //}
+            //else
+            //{
+            //    txtUserName.BackColor = Color.Red;
+            //}
+        }
+        private void TxtUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+        }
 
+        private void TxtUserName_TextChanged(object sender, EventArgs e)
+        {
+            checkUsername();
+        }
     }
 }

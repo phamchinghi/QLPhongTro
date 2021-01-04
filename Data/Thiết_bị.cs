@@ -20,6 +20,7 @@ namespace QL_PhongTro.Data
         [StringLength(5)]
         public string Ma_thiết_bị { get; set; }
 
+        [Required]
         [StringLength(30)]
         public string TenTB { get; set; }
 

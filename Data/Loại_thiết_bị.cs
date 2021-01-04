@@ -21,6 +21,7 @@ namespace QL_PhongTro.Data
         public string Mã_loại_TB { get; set; }
 
         [Column("Tên loại TB")]
+        [Required]
         [StringLength(30)]
         public string Tên_loại_TB { get; set; }
 

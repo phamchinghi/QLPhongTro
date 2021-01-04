@@ -137,7 +137,7 @@ namespace QL_PhongTro
             this.btnSua.Location = new System.Drawing.Point(680, 144);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(120, 60);
-            this.btnSua.TabIndex = 1;
+            this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Cập nhật";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
@@ -146,7 +146,7 @@ namespace QL_PhongTro
             this.btnDong.Location = new System.Drawing.Point(823, 144);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(120, 60);
-            this.btnDong.TabIndex = 1;
+            this.btnDong.TabIndex = 9;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
             // 
@@ -179,7 +179,7 @@ namespace QL_PhongTro
             this.radioButton2.Location = new System.Drawing.Point(459, 28);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(47, 21);
-            this.radioButton2.TabIndex = 4;
+            this.radioButton2.TabIndex = 5;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Nữ";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -190,7 +190,7 @@ namespace QL_PhongTro
             this.radioButton1.Location = new System.Drawing.Point(396, 28);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(57, 21);
-            this.radioButton1.TabIndex = 3;
+            this.radioButton1.TabIndex = 4;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Nam";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -200,32 +200,32 @@ namespace QL_PhongTro
             this.textBox5.Location = new System.Drawing.Point(396, 157);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 23);
-            this.textBox5.TabIndex = 2;
+            this.textBox5.TabIndex = 7;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(396, 96);
+            this.textBox4.Location = new System.Drawing.Point(396, 93);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 2;
+            this.textBox4.TabIndex = 6;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(80, 157);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 1;
+            this.textBox3.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(80, 96);
+            this.textBox2.Location = new System.Drawing.Point(80, 93);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 1;
+            this.textBox2.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 22);
+            this.textBox1.Location = new System.Drawing.Point(80, 30);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 1;
@@ -251,7 +251,7 @@ namespace QL_PhongTro
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(316, 99);
+            this.label4.Location = new System.Drawing.Point(316, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 0;
@@ -269,7 +269,7 @@ namespace QL_PhongTro
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 102);
+            this.label2.Location = new System.Drawing.Point(6, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 0;
@@ -278,7 +278,7 @@ namespace QL_PhongTro
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 30);
+            this.label1.Location = new System.Drawing.Point(6, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 0;
@@ -289,6 +289,7 @@ namespace QL_PhongTro
             this.cbbMaPhong.DropDownHeight = 100;
             this.cbbMaPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaPhong.FormattingEnabled = true;
+            this.cbbMaPhong.IntegralHeight = false;
             this.cbbMaPhong.ItemHeight = 16;
             this.cbbMaPhong.Items.AddRange(new object[] {
             "P101 ",
@@ -315,7 +316,7 @@ namespace QL_PhongTro
             this.cbbMaPhong.MaxDropDownItems = 4;
             this.cbbMaPhong.Name = "cbbMaPhong";
             this.cbbMaPhong.Size = new System.Drawing.Size(136, 24);
-            this.cbbMaPhong.TabIndex = 3;
+            this.cbbMaPhong.TabIndex = 0;
             // 
             // label6
             // 

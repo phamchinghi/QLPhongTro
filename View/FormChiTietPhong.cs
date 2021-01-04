@@ -33,7 +33,14 @@ namespace QL_PhongTro
             //Lay thang cua he thong gan vao groupbox
             DateTime mon = DateTime.Now;
             gbThangSau.Text = "Tháng " + mon.Month.ToString();
-            gbThangTruoc.Text = "Tháng " + (mon.Month - 1).ToString();
+            if((mon.Month - 1) == 0)
+            {
+                gbThangTruoc.Text = "Tháng " + "12";
+            }
+            else
+            {
+                gbThangTruoc.Text = "Tháng " + (mon.Month - 1).ToString();
+            }
             bbtnThanhToan.Enabled = false;
             bbtnThuePhong.Enabled = false;
             bbtnGiuCho.Enabled = false;

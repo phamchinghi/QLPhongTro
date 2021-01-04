@@ -13,7 +13,6 @@ namespace QL_PhongTro.Data
         public Khách_hàng()
         {
             HOPDONGs = new HashSet<HOPDONG>();
-            Phòng = new HashSet<Phòng>();
         }
 
         [Key]
@@ -22,30 +21,30 @@ namespace QL_PhongTro.Data
         public string Mã_KH { get; set; }
 
         [Column("Tên KH")]
-        [StringLength(20)]
+        [Required]
+        [StringLength(30)]
         public string Tên_KH { get; set; }
 
-        [Column("Năm sinh")]
+        [Column("Năm sinh", TypeName = "date")]
         public DateTime Năm_sinh { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string Sđt { get; set; }
 
+        [Required]
         [StringLength(9)]
         public string CMND { get; set; }
 
         [Column("Quê quán")]
+        [Required]
         [StringLength(50)]
         public string Quê_quán { get; set; }
 
         [Column("Giới tính")]
-        [StringLength(4)]
         public string Giới_tính { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Phòng> Phòng { get; set; }
     }
 }

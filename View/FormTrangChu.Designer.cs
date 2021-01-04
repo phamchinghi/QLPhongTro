@@ -140,10 +140,10 @@
             this.clmMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmHoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNamSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNamsinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmQuequan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -1351,10 +1351,10 @@
             this.clmMaKH,
             this.clmMaPhong,
             this.clmHoten,
-            this.clmNamSinh,
-            this.clmSDT,
+            this.clmNamsinh,
+            this.clmSdt,
             this.clmCMND,
-            this.clmQueQuan,
+            this.clmQuequan,
             this.clmGioitinh});
             this.dgvTrangChu.Location = new System.Drawing.Point(0, 6);
             this.dgvTrangChu.Name = "dgvTrangChu";
@@ -1368,14 +1368,14 @@
             // 
             // clmMaKH
             // 
-            this.clmMaKH.HeaderText = "Mã Kh";
+            this.clmMaKH.HeaderText = "Mã KH";
             this.clmMaKH.MinimumWidth = 6;
             this.clmMaKH.Name = "clmMaKH";
             this.clmMaKH.ReadOnly = true;
             // 
             // clmMaPhong
             // 
-            this.clmMaPhong.HeaderText = "Mã Phòng";
+            this.clmMaPhong.HeaderText = "Mã phòng";
             this.clmMaPhong.MinimumWidth = 6;
             this.clmMaPhong.Name = "clmMaPhong";
             this.clmMaPhong.ReadOnly = true;
@@ -1387,19 +1387,19 @@
             this.clmHoten.Name = "clmHoten";
             this.clmHoten.ReadOnly = true;
             // 
-            // clmNamSinh
+            // clmNamsinh
             // 
-            this.clmNamSinh.HeaderText = "Năm sinh";
-            this.clmNamSinh.MinimumWidth = 6;
-            this.clmNamSinh.Name = "clmNamSinh";
-            this.clmNamSinh.ReadOnly = true;
+            this.clmNamsinh.HeaderText = "Năm sinh";
+            this.clmNamsinh.MinimumWidth = 6;
+            this.clmNamsinh.Name = "clmNamsinh";
+            this.clmNamsinh.ReadOnly = true;
             // 
-            // clmSDT
+            // clmSdt
             // 
-            this.clmSDT.HeaderText = "SDT";
-            this.clmSDT.MinimumWidth = 6;
-            this.clmSDT.Name = "clmSDT";
-            this.clmSDT.ReadOnly = true;
+            this.clmSdt.HeaderText = "Số điện thoại";
+            this.clmSdt.MinimumWidth = 6;
+            this.clmSdt.Name = "clmSdt";
+            this.clmSdt.ReadOnly = true;
             // 
             // clmCMND
             // 
@@ -1408,12 +1408,12 @@
             this.clmCMND.Name = "clmCMND";
             this.clmCMND.ReadOnly = true;
             // 
-            // clmQueQuan
+            // clmQuequan
             // 
-            this.clmQueQuan.HeaderText = "Quê quán";
-            this.clmQueQuan.MinimumWidth = 6;
-            this.clmQueQuan.Name = "clmQueQuan";
-            this.clmQueQuan.ReadOnly = true;
+            this.clmQuequan.HeaderText = "Quê quán";
+            this.clmQuequan.MinimumWidth = 6;
+            this.clmQuequan.Name = "clmQuequan";
+            this.clmQuequan.ReadOnly = true;
             // 
             // clmGioitinh
             // 
@@ -1596,10 +1596,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmHoten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNamSinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmNamsinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCMND;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmQueQuan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmQuequan;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmGioitinh;
     }
 }

@@ -19,8 +19,8 @@
         public virtual DbSet<Khách_hàng> Khách_hàng { get; set; }
         public virtual DbSet<Loại_phòng> Loại_phòng { get; set; }
         public virtual DbSet<Loại_thiết_bị> Loại_thiết_bị { get; set; }
-        public virtual DbSet<Nhân_viên_QL> Nhân_viên_QL { get; set; }
         public virtual DbSet<Phòng> Phòng { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Tài_khoản> Tài_khoản { get; set; }
         public virtual DbSet<Thiết_bị> Thiết_bị { get; set; }
         public virtual DbSet<Thống_kê> Thống_kê { get; set; }
@@ -43,31 +43,12 @@
                 .IsUnicode(false);
 
             modelBuilder.Entity<DỊch_vụ>()
-                .Property(e => e.Giá_DV)
-                .HasPrecision(19, 4);
-
-            modelBuilder.Entity<Hóa_đơn>()
-                .Property(e => e.Số_hóa_đơn)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Hóa_đơn>()
-                .Property(e => e.MaNV)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .HasMany(e => e.Hóa_đơn)
+                .WithRequired(e => e.DỊch_vụ)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Hóa_đơn>()
                 .Property(e => e.Mã_DV)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Hóa_đơn>()
-                .Property(e => e.SoHD)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HOPDONG>()
-                .Property(e => e.SoHD)
                 .IsFixedLength()
                 .IsUnicode(false);
 
@@ -82,9 +63,9 @@
                 .IsUnicode(false);
 
             modelBuilder.Entity<HOPDONG>()
-                .Property(e => e.MaNV)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .HasMany(e => e.Hóa_đơn)
+                .WithRequired(e => e.HOPDONG)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Khách_hàng>()
                 .Property(e => e.Mã_KH)
@@ -121,21 +102,6 @@
                 .WithRequired(e => e.Loại_thiết_bị)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Nhân_viên_QL>()
-                .Property(e => e.MaNV)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Nhân_viên_QL>()
-                .HasMany(e => e.Hóa_đơn)
-                .WithRequired(e => e.Nhân_viên_QL)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Nhân_viên_QL>()
-                .HasMany(e => e.Thống_kê)
-                .WithRequired(e => e.Nhân_viên_QL)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Phòng>()
                 .Property(e => e.Mã_phòng)
                 .IsFixedLength()
@@ -151,20 +117,15 @@
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            //modelBuilder.Entity<Phòng>()
-            //    .Property(e => e.Mã_KH)
-            //    .IsFixedLength()
-            //    .IsUnicode(false);
-
             modelBuilder.Entity<Phòng>()
                 .HasMany(e => e.CT_TrangBi)
                 .WithRequired(e => e.Phòng)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Tài_khoản>()
-                .Property(e => e.MaNV)
-                .IsFixedLength()
-                .IsUnicode(false);
+            modelBuilder.Entity<Phòng>()
+                .HasMany(e => e.HOPDONGs)
+                .WithRequired(e => e.Phòng)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Thiết_bị>()
                 .Property(e => e.Ma_thiết_bị)
@@ -183,11 +144,6 @@
 
             modelBuilder.Entity<Thống_kê>()
                 .Property(e => e.Số_phiếu_TK)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Thống_kê>()
-                .Property(e => e.MaNV)
                 .IsFixedLength()
                 .IsUnicode(false);
         }

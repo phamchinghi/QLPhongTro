@@ -11,7 +11,8 @@ using DevExpress.XtraBars;
 using QL_PhongTro.Data;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
-
+using System.Data.SqlClient;
+using DataTable = System.Data.DataTable;
 
 namespace QL_PhongTro
 {
@@ -32,31 +33,39 @@ namespace QL_PhongTro
             skin();
             try
             {
-                List<Khách_hàng> listKhachHangs = DB.Khách_hàng.ToList();//goi danh sach khach hang
-                BindingGrid(listKhachHangs);
+                //List<Khách_hàng> listKhachHangs = DB.Khách_hàng.ToList();//goi danh sach khach hang
+                //BindingGrid(listKhachHangs);
+                BindingGrid();
             }
             catch(Exception)
             {
-                MessageBox.Show("Failed to load Data","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tải dữ liệu thất bại","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
         }
-        private void BindingGrid(List<Khách_hàng> khách_Hàngs)
+        //private void BindingGrid(List<Khách_hàng> khách_Hàngs)
+        //{
+        private void BindingGrid()
         {
-            dgvDSKhachTro.Rows.Clear();
-            foreach (var item in khách_Hàngs)
-            {
-                int index = dgvDSKhachTro.Rows.Add();//them vao tung vi tri
-                //xac dinh vi tri cac cot de them du lieu
-                dgvDSKhachTro.Rows[index].Cells[0].Value = item.Mã_KH;
-                dgvDSKhachTro.Rows[index].Cells[1].Value = item.Tên_KH;
-                //format sang kiểu date không có time trong excel
-                dgvDSKhachTro.Rows[index].Cells[2].Value = item.Năm_sinh.ToShortDateString();
-                //dgvDSKhachTro.Rows[index].Cells[2].Value= "MM/dd/yyyy";
-                dgvDSKhachTro.Rows[index].Cells[3].Value = item.Sđt;
-                dgvDSKhachTro.Rows[index].Cells[4].Value = item.Giới_tính;
-                dgvDSKhachTro.Rows[index].Cells[5].Value = item.Quê_quán;
-                dgvDSKhachTro.Rows[index].Cells[6].Value = item.CMND;
-            }
+                //dgvDSKhachTro.Rows.Clear();
+                //foreach (var item in khách_Hàngs)
+                //{
+                //    int index = dgvDSKhachTro.Rows.Add();//them vao tung vi tri
+                //    //xac dinh vi tri cac cot de them du lieu
+                //    //dgvDSKhachTro.Rows[index].Cells[0].Value = item.Mã_KH;
+                //    //dgvDSKhachTro.Rows[index].Cells[1].Value = item.Tên_KH;
+                //    //dgvDSKhachTro.Rows[index].Cells[2].Value = item.Năm_sinh.ToShortDateString();//format sang kiểu date không có time
+                //    //dgvDSKhachTro.Rows[index].Cells[3].Value = item.Sđt;
+                //    //dgvDSKhachTro.Rows[index].Cells[4].Value = item.Giới_tính;
+                //    //dgvDSKhachTro.Rows[index].Cells[5].Value = item.Quê_quán;
+                //    //dgvDSKhachTro.Rows[index].Cells[6].Value = item.CMND;
+                //    dgvDSKhachTro.DataSource = khách_Hàngs;
+                //}
+
+            string query = "select * from DSKhachHang";
+            DataConnection.Instance.ExcData(query);
+            DataConnection.Instance.readData(query);
+            dgvDSKhachTro.DataSource = DataConnection.Instance.readData(query);
         }
         private void BtnDong_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -192,12 +201,11 @@ namespace QL_PhongTro
                     stt++;
                     row++;
                     //Các đối tượng thuộc kiểu dynamic sẽ không xác định được kiểu cho đến khi chương trình được thực thi. Tức là trình biên dịch sẽ bỏ qua tất cả lỗi về cú pháp, việc kiểm tra này sẽ thực hiện khi chương trình thực thi
-                    dynamic[] arr = { stt, KH.Mã_KH, KH.Tên_KH, KH.Năm_sinh.ToShortDateString(), KH.Sđt, KH.Giới_tính, KH.Quê_quán, KH.CMND };
+                    dynamic[] arr = { stt, KH.Mã_KH, KH.Tên_KH, KH.Năm_sinh.ToShortDateString(), KH.Sđt,KH.Giới_tính, KH.Quê_quán, KH.CMND };
                     Range rowData = workSheet.get_Range("A" + row, "H" + row);//lấy dòng thứ row để bỏ 
                     rowData.Font.Size = fontSizeNoiDung;
                     rowData.Font.Name = fontName;
                     rowData.Value2 = arr;
-                    //arr[3] = (dynamic)row2_NamSinh.NumberFormat("mm/dd/yyyy");
                 }
 
                 //kẻ khung

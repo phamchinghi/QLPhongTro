@@ -104,26 +104,26 @@ namespace QL_PhongTro
             this.cbbPhong.FormattingEnabled = true;
             this.cbbPhong.IntegralHeight = false;
             this.cbbPhong.Items.AddRange(new object[] {
-            "Phòng 101",
-            "Phòng 102",
-            "Phòng103",
-            "Phòng104",
-            "Phòng 105",
-            "Phòng 106",
-            "Phòng 107",
-            "Phòng 108",
-            "Phòng 201",
-            "Phòng 202",
-            "Phòng 203",
-            "Phòng 204",
-            "Phòng 205",
-            "Phòng 206",
-            "Phòng207",
-            "Phòng 208",
-            "Phòng 301",
-            "Phòng 302",
-            "Phòng 303",
-            "Phòng 304"});
+            "P101",
+            "P102",
+            "P103",
+            "P104",
+            "P105",
+            "P106",
+            "P107",
+            "P108",
+            "P201",
+            "P202",
+            "P203",
+            "P204",
+            "P205",
+            "P206",
+            "P207",
+            "P208",
+            "P301",
+            "P302",
+            "P303",
+            "P304"});
             this.cbbPhong.Location = new System.Drawing.Point(220, 427);
             this.cbbPhong.MaxDropDownItems = 4;
             this.cbbPhong.Name = "cbbPhong";
@@ -169,13 +169,13 @@ namespace QL_PhongTro
             this.rbtnNu.Name = "rbtnNu";
             this.rbtnNu.Size = new System.Drawing.Size(48, 22);
             this.rbtnNu.TabIndex = 4;
-            this.rbtnNu.TabStop = true;
             this.rbtnNu.Text = "Nữ";
             this.rbtnNu.UseVisualStyleBackColor = true;
             // 
             // rbtnNam
             // 
             this.rbtnNam.AutoSize = true;
+            this.rbtnNam.Checked = true;
             this.rbtnNam.Location = new System.Drawing.Point(220, 216);
             this.rbtnNam.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbtnNam.Name = "rbtnNam";

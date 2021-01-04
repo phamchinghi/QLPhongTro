@@ -20,6 +20,7 @@ namespace QL_PhongTro.Data
         [StringLength(5)]
         public string Mã_loại_phòng { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string TenLP { get; set; }
 

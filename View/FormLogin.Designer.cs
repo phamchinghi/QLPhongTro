@@ -90,6 +90,7 @@ namespace QL_PhongTro
             // 
             // txtUserName
             // 
+            this.txtUserName.BackColor = System.Drawing.Color.White;
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserName.Location = new System.Drawing.Point(135, 320);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -97,6 +98,8 @@ namespace QL_PhongTro
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(189, 21);
             this.txtUserName.TabIndex = 0;
+            this.txtUserName.TextChanged += new System.EventHandler(this.TxtUserName_TextChanged);
+            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUserName_KeyPress);
             // 
             // txtpassword
             // 

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -46,11 +47,12 @@ namespace QL_PhongTro
         }
         private void BindingGrid( List<HOPDONG> hopDongs)
         {
+
             dgvTrangChu.Rows.Clear();
-           foreach (var item in hopDongs)
-           {
-                    int index = dgvTrangChu.Rows.Add();//them vao tung vi tri
-                    //xac dinh vi tri cac cot de them du lieu
+            foreach (var item in hopDongs)
+            {
+                int index = dgvTrangChu.Rows.Add();//them vao tung vi tri
+                                                   //xac dinh vi tri cac cot de them du lieu
                 dgvTrangChu.Rows[index].Cells[0].Value = item.Mã_KH;
                 dgvTrangChu.Rows[index].Cells[1].Value = item.Mã_phòng.TrimEnd();
                 dgvTrangChu.Rows[index].Cells[2].Value = item.Khách_hàng.Tên_KH;
@@ -59,7 +61,12 @@ namespace QL_PhongTro
                 dgvTrangChu.Rows[index].Cells[5].Value = item.Khách_hàng.CMND;
                 dgvTrangChu.Rows[index].Cells[6].Value = item.Khách_hàng.Quê_quán;
                 dgvTrangChu.Rows[index].Cells[7].Value = item.Khách_hàng.Giới_tính;
-           }
+            }
+            //DataConnection dataConnection = new DataConnection();
+            //string query = "select * from Trangchu";
+            //dataConnection.ExcData(query);
+            //dataConnection.readData(query);
+            //dgvTrangChu.DataSource = dataConnection.readData(query);
         }
         private void BindingDataPhong(List<HOPDONG> hopDongs,Label lbl)
         {
@@ -278,7 +285,7 @@ namespace QL_PhongTro
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FormThemKhachTro frmThemKhachTro = new FormThemKhachTro();
-            frmThemKhachTro.Show();
+            frmThemKhachTro.ShowDialog();
         }
         private void BarButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

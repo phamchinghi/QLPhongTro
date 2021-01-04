@@ -16,28 +16,26 @@ namespace QL_PhongTro.Data
         }
 
         [Key]
-        [StringLength(5)]
-        public string SoHD { get; set; }
-
-        public DateTime? NgayLapHD { get; set; }
-
-        public DateTime? ThoiHanHD { get; set; }
+        public int SoHD { get; set; }
 
         [Column("Mã KH")]
+        [Required]
         [StringLength(5)]
         public string Mã_KH { get; set; }
 
         [Column("Mã phòng")]
+        [Required]
         [StringLength(5)]
         public string Mã_phòng { get; set; }
 
-        [StringLength(5)]
-        public string MaNV { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime NgayLapHD { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime NgayhethanHD { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hóa_đơn> Hóa_đơn { get; set; }
-
-        public virtual Nhân_viên_QL Nhân_viên_QL { get; set; }
 
         public virtual Khách_hàng Khách_hàng { get; set; }
 

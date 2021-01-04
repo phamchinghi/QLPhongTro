@@ -21,14 +21,16 @@ namespace QL_PhongTro.Data
         public string Mã_DV { get; set; }
 
         [Column("Tên DV")]
+        [Required]
         [StringLength(20)]
         public string Tên_DV { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string DVT { get; set; }
 
-        [Column("Giá DV", TypeName = "money")]
-        public decimal Giá_DV { get; set; }
+        [Column("Giá DV")]
+        public int Giá_DV { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hóa_đơn> Hóa_đơn { get; set; }

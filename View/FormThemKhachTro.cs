@@ -1,8 +1,10 @@
 ﻿using DevExpress.XtraEditors;
+using QL_PhongTro.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,7 @@ namespace QL_PhongTro
 {
     public partial class FormThemKhachTro : DevExpress.XtraEditors.XtraForm
     {
+        DB_QLPhongTro DB = new DB_QLPhongTro();
         public FormThemKhachTro()
         {
             InitializeComponent();
@@ -100,10 +103,49 @@ namespace QL_PhongTro
         {
             try
             {
-                if (txtMaKhach.Text == "" || txtHoten.Text == "" || dtpNgaySinh.Value == null || dtpNgaySinh.Value == DateTime.Now || rbtnNam.Checked == false || rbtnNu.Checked == false || txtSDT.Text == "" || txtQueQuan.Text == "" || txtCMND.Text == "")
+                if (txtMaKhach.Text == "" || txtHoten.Text == "" || dtpNgaySinh.Value == null || dtpNgaySinh.Value == DateTime.Now || txtSDT.Text == "" || txtQueQuan.Text == "" || txtCMND.Text == "")
                 {
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                }
+                string maKH = txtMaKhach.Text;
+                string hoTen = txtHoten.Text;
+                //int ngay = dtpNgaySinh.Value.Day;
+                //int thang = dtpNgaySinh.Value.Month;
+                //int nam = dtpNgaySinh.Value.Year;
+                //xử lý radio button
+                string rbtnnam = "Nam";
+                string rbtnnu = "Nữ";
+                string sdt = txtSDT.Text;
+                string quequan = txtQueQuan.Text;
+                string cmnd = txtCMND.Text;
+                string tenPhong = cbbPhong.Text;
+                HOPDONG hopDong = new HOPDONG();
+                Khách_hàng kh = DB.Khách_hàng.FirstOrDefault(p => p.Mã_KH == maKH);
+                if(kh != null)
+                {
+                    MessageBox.Show("Trùng mã khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Khách_hàng kh1 = new Khách_hàng();// tạo mới 1 khách hàng rồi thêm vào dgv
+                    kh1.Mã_KH = maKH;
+                    kh1.Tên_KH = hoTen;
+                    kh1.Năm_sinh = dtpNgaySinh.Value;
+                    kh1.Sđt = sdt;
+                    kh1.Quê_quán = quequan;
+                    if(rbtnNam.Checked == true)
+                    { 
+                        kh1.Giới_tính = rbtnnam;
+                    }
+                    else
+                    {
+                        kh1.Giới_tính = rbtnnu;
+                    }
+                    hopDong.Mã_phòng = tenPhong;
+                    kh1.CMND = cmnd;
+                    DB.Khách_hàng.Add(kh1);
+                    DB.HOPDONGs.Add(hopDong);
+                    DB.SaveChanges();
                 }
             }
             catch(Exception ex)

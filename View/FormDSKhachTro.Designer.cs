@@ -36,13 +36,6 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.dgvDSKhachTro = new System.Windows.Forms.DataGridView();
-            this.clmMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNamSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhachTro)).BeginInit();
             this.SuspendLayout();
@@ -109,14 +102,6 @@
             this.dgvDSKhachTro.AllowUserToDeleteRows = false;
             this.dgvDSKhachTro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSKhachTro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSKhachTro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmMaKH,
-            this.clmHoTen,
-            this.clmNamSinh,
-            this.clmSDT,
-            this.clmGioiTinh,
-            this.clmQueQuan,
-            this.clmCMND});
             this.dgvDSKhachTro.Location = new System.Drawing.Point(12, 200);
             this.dgvDSKhachTro.Name = "dgvDSKhachTro";
             this.dgvDSKhachTro.ReadOnly = true;
@@ -125,55 +110,6 @@
             this.dgvDSKhachTro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSKhachTro.Size = new System.Drawing.Size(1137, 499);
             this.dgvDSKhachTro.TabIndex = 2;
-            // 
-            // clmMaKH
-            // 
-            this.clmMaKH.HeaderText = "Mã khách hàng";
-            this.clmMaKH.MinimumWidth = 6;
-            this.clmMaKH.Name = "clmMaKH";
-            this.clmMaKH.ReadOnly = true;
-            // 
-            // clmHoTen
-            // 
-            this.clmHoTen.HeaderText = "Họ tên";
-            this.clmHoTen.MinimumWidth = 6;
-            this.clmHoTen.Name = "clmHoTen";
-            this.clmHoTen.ReadOnly = true;
-            // 
-            // clmNamSinh
-            // 
-            this.clmNamSinh.HeaderText = "Năm sinh";
-            this.clmNamSinh.MinimumWidth = 6;
-            this.clmNamSinh.Name = "clmNamSinh";
-            this.clmNamSinh.ReadOnly = true;
-            // 
-            // clmSDT
-            // 
-            this.clmSDT.HeaderText = "SDT";
-            this.clmSDT.MinimumWidth = 6;
-            this.clmSDT.Name = "clmSDT";
-            this.clmSDT.ReadOnly = true;
-            // 
-            // clmGioiTinh
-            // 
-            this.clmGioiTinh.HeaderText = "Giới tính";
-            this.clmGioiTinh.MinimumWidth = 6;
-            this.clmGioiTinh.Name = "clmGioiTinh";
-            this.clmGioiTinh.ReadOnly = true;
-            // 
-            // clmQueQuan
-            // 
-            this.clmQueQuan.HeaderText = "Quê quán";
-            this.clmQueQuan.MinimumWidth = 6;
-            this.clmQueQuan.Name = "clmQueQuan";
-            this.clmQueQuan.ReadOnly = true;
-            // 
-            // clmCMND
-            // 
-            this.clmCMND.HeaderText = "CMND";
-            this.clmCMND.MinimumWidth = 6;
-            this.clmCMND.Name = "clmCMND";
-            this.clmCMND.ReadOnly = true;
             // 
             // FormDSKhachTro
             // 
@@ -206,12 +142,5 @@
         private DevExpress.XtraBars.BarButtonItem btnDong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private System.Windows.Forms.DataGridView dgvDSKhachTro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmHoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNamSinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmGioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmQueQuan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmCMND;
     }
 }

@@ -84,11 +84,11 @@ namespace QL_PhongTro
             DỊch_vụ dbWifi = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "WF");
             DỊch_vụ dbRac = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "RC");
 
-            dbGiaDien.Giá_DV = (decimal)float.Parse(txtGiaDienSau.Text);
-            dbGiaNuoc.Giá_DV = (decimal)float.Parse(txtGiaNuocSau.Text);
-            dbGiaXe.Giá_DV = (decimal)float.Parse(txtGiaXeSau.Text);
-            dbWifi.Giá_DV = (decimal)float.Parse(txtGiaWifiSau.Text);
-            dbRac.Giá_DV = (decimal)float.Parse(txtGiaRacSau.Text);
+            dbGiaDien.Giá_DV = int.Parse(txtGiaDienSau.Text);
+            dbGiaNuoc.Giá_DV = int.Parse(txtGiaNuocSau.Text);
+            dbGiaXe.Giá_DV = int.Parse(txtGiaXeSau.Text);
+            dbWifi.Giá_DV = int.Parse(txtGiaWifiSau.Text);
+            dbRac.Giá_DV = int.Parse(txtGiaRacSau.Text);
             DB.SaveChanges();
             foreach(TextBox txt in pnlSau.Controls)
             {

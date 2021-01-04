@@ -18,9 +18,9 @@ namespace QL_PhongTro.Data
         [StringLength(20)]
         public string Password { get; set; }
 
-        [StringLength(5)]
-        public string MaNV { get; set; }
-
-        public virtual Nhân_viên_QL Nhân_viên_QL { get; set; }
+        [Column("Tên người dùng")]
+        [Required]
+        [StringLength(30)]
+        public string Tên_người_dùng { get; set; }
     }
 }

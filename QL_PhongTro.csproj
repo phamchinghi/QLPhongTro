@@ -94,6 +94,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\DataConnection.cs" />
     <Compile Include="Data\CT_TrangBi.cs" />
     <Compile Include="Data\DB_QLPhongTro.cs" />
     <Compile Include="Data\DỊch_vụ.cs" />
@@ -102,16 +103,11 @@
     <Compile Include="Data\Khách_hàng.cs" />
     <Compile Include="Data\Loại_phòng.cs" />
     <Compile Include="Data\Loại_thiết_bị.cs" />
-    <Compile Include="Data\Nhân_viên_QL.cs" />
     <Compile Include="Data\Phòng.cs" />
+    <Compile Include="Data\sysdiagram.cs" />
     <Compile Include="Data\Thiết_bị.cs" />
     <Compile Include="Data\Thống_kê.cs" />
     <Compile Include="Data\Tài_khoản.cs" />
-    <Compile Include="Model\DataQLPhong_Tro.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataQLPhong_Tro.dbml</DependentUpon>
-    </Compile>
     <Compile Include="View\FormCapNhat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,14 +257,6 @@
       <DependentUpon>FormXoaThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="Model\DataQLPhong_Tro.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataQLPhong_Tro.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Model\DataQLPhong_Tro.dbml.layout">
-      <DependentUpon>DataQLPhong_Tro.dbml</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
