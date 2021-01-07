@@ -28,6 +28,9 @@ namespace QL_PhongTro.Data
         [StringLength(10)]
         public string DVT { get; set; }
 
+        [Column("Đơn giá")]
+        public int? Đơn_giá { get; set; }
+
         public virtual Phòng Phòng { get; set; }
 
         public virtual Thiết_bị Thiết_bị { get; set; }

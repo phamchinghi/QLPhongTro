@@ -44,12 +44,11 @@ namespace QL_PhongTro
 
         private void button3_Click(object sender, EventArgs e)
         { 
-            //Close();
             System.Windows.Forms.Application.Exit();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            List<Tài_khoản> listTaiKhoan = DB.Tài_khoản.ToList();
+            //List<Tài_khoản> listTaiKhoan = DB.Tài_khoản.ToList();
             if (txtUserName.Text == " " || txtpassword.Text == " ")
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -69,9 +68,10 @@ namespace QL_PhongTro
                 }
             }
         }
+        //============================== Hàm kiểm tra user name và password ================
         bool checkLogin(string userName, string password)
         {
-            string query = "exec dbo._GetAccount @username = '" + userName +"', @password = '" + password + "' ";//lấy text của username và password để thực thi duyệt ở sql
+            string query = "exec dbo._GetAccount @username ='" + userName +"', @password ='" + password + "'";//lấy text của username và password để thực thi duyệt ở sql
             DataConnection.Instance.ExcData(query);
             DataTable result =  DataConnection.Instance.readData(query);
             return result.Rows.Count > 0;//trả về số dòng đúng dữ liệu
@@ -83,15 +83,7 @@ namespace QL_PhongTro
         }
         private void checkUsername()
         {
-
-            //if (txtUserName.TextLength >= 10)
-            //{
-            //    txtUserName.BackColor = Color.LawnGreen;
-            //}
-            //else
-            //{
-            //    txtUserName.BackColor = Color.Red;
-            //}
+                        
         }
         private void TxtUserName_KeyPress(object sender, KeyPressEventArgs e)
         {

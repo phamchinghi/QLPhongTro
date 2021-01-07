@@ -92,9 +92,9 @@ namespace QL_PhongTro
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(305, 311);
+            this.btnDong.Location = new System.Drawing.Point(309, 301);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(117, 67);
+            this.btnDong.Size = new System.Drawing.Size(117, 47);
             this.btnDong.TabIndex = 4;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
@@ -102,9 +102,9 @@ namespace QL_PhongTro
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(181, 311);
+            this.btnLuu.Location = new System.Drawing.Point(181, 301);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(117, 67);
+            this.btnLuu.Size = new System.Drawing.Size(117, 47);
             this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "Lưu thay đổi";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -112,6 +112,7 @@ namespace QL_PhongTro
             // 
             // FormDoiMatKhau
             // 
+            this.AcceptButton = this.btnLuu;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

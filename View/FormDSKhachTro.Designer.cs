@@ -57,7 +57,7 @@
             this.ribbon.OptionsMenuMinWidth = 412;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1163, 193);
+            this.ribbon.Size = new System.Drawing.Size(1063, 193);
             this.ribbon.Click += new System.EventHandler(this.Ribbon_Click);
             // 
             // barButtonItem1
@@ -108,19 +108,17 @@
             this.dgvDSKhachTro.RowHeadersWidth = 51;
             this.dgvDSKhachTro.RowTemplate.Height = 24;
             this.dgvDSKhachTro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSKhachTro.Size = new System.Drawing.Size(1137, 499);
+            this.dgvDSKhachTro.Size = new System.Drawing.Size(1035, 387);
             this.dgvDSKhachTro.TabIndex = 2;
             // 
             // FormDSKhachTro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1163, 704);
+            this.ClientSize = new System.Drawing.Size(1063, 599);
             this.Controls.Add(this.dgvDSKhachTro);
             this.Controls.Add(this.ribbon);
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("FormDSKhachTro.IconOptions.SvgImage")));
-            this.MaximumSize = new System.Drawing.Size(1165, 705);
-            this.MinimumSize = new System.Drawing.Size(1165, 705);
             this.Name = "FormDSKhachTro";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -13,6 +13,7 @@ namespace QL_PhongTro.Data
         {
             CT_TrangBi = new HashSet<CT_TrangBi>();
             HOPDONGs = new HashSet<HOPDONG>();
+            Thiết_bị = new HashSet<Thiết_bị>();
         }
 
         [Key]
@@ -47,5 +48,8 @@ namespace QL_PhongTro.Data
         public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
 
         public virtual Loại_phòng Loại_phòng { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Thiết_bị> Thiết_bị { get; set; }
     }
 }

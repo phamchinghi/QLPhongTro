@@ -19,11 +19,6 @@ namespace QL_PhongTro.Data
         [Column("Số hóa đơn")]
         public int Số_hóa_đơn { get; set; }
 
-        [Column("Mã DV")]
-        [Required]
-        [StringLength(5)]
-        public string Mã_DV { get; set; }
-
         public int SoHD { get; set; }
 
         [Column("Số điện tháng trước")]
@@ -44,9 +39,37 @@ namespace QL_PhongTro.Data
         [Column("Ngày lập hóa đơn", TypeName = "date")]
         public DateTime Ngày_lập_hóa_đơn { get; set; }
 
-        public virtual DỊch_vụ DỊch_vụ { get; set; }
+        [Column("Mã nước")]
+        [StringLength(5)]
+        public string Mã_nước { get; set; }
+
+        [Column("Mã wifi")]
+        [StringLength(5)]
+        public string Mã_wifi { get; set; }
+
+        [Column("Mã rác")]
+        [StringLength(5)]
+        public string Mã_rác { get; set; }
+
+        [Column("Mã xe")]
+        [StringLength(5)]
+        public string Mã_xe { get; set; }
+
+        [Column("Mã điện")]
+        [StringLength(5)]
+        public string Mã_điện { get; set; }
+
+        public virtual Điện Điện { get; set; }
 
         public virtual HOPDONG HOPDONG { get; set; }
+
+        public virtual Nước Nước { get; set; }
+
+        public virtual Wifi Wifi { get; set; }
+
+        public virtual Rác Rác { get; set; }
+
+        public virtual Xe Xe { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Thống_kê> Thống_kê { get; set; }

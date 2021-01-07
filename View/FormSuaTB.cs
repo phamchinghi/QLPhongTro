@@ -26,5 +26,10 @@ namespace QL_PhongTro
         {
             skin();
         }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

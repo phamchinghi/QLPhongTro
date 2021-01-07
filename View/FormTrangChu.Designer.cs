@@ -40,7 +40,7 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.oa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnGiaDien = new DevExpress.XtraBars.BarButtonItem();
@@ -75,17 +75,24 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.grbChiTietPhong = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblChiTietSoPhong = new System.Windows.Forms.Label();
+            this.gbThongTin = new System.Windows.Forms.GroupBox();
+            this.cbPhong = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rbtnNu = new System.Windows.Forms.RadioButton();
+            this.rbtnNam = new System.Windows.Forms.RadioButton();
+            this.dtpNamSinh = new System.Windows.Forms.DateTimePicker();
+            this.txtCMND = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtQueQuan = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblDientich = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtHoten = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblGiaPhong = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tclTang1 = new System.Windows.Forms.TabControl();
             this.tabTang1 = new System.Windows.Forms.TabPage();
             this.pnlTang1 = new System.Windows.Forms.Panel();
@@ -150,10 +157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.grbChiTietPhong.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gbThongTin.SuspendLayout();
             this.tclTang1.SuspendLayout();
             this.tabTang1.SuspendLayout();
             this.pnlTang1.SuspendLayout();
@@ -214,7 +218,7 @@
             this.barButtonItem6,
             this.barButtonItem7,
             this.barButtonItem8,
-            this.oa,
+            this.btnHoaDon,
             this.barButtonItem9,
             this.barButtonItem10,
             this.barbtnGiaDien,
@@ -229,7 +233,7 @@
             this.barButtonItem12});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.ribbonControl1.MaxItemId = 48;
+            this.ribbonControl1.MaxItemId = 51;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 751;
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
@@ -242,7 +246,7 @@
             this.ribbonPage6});
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHypertextLabel1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1148, 193);
+            this.ribbonControl1.Size = new System.Drawing.Size(1414, 193);
             this.ribbonControl1.Click += new System.EventHandler(this.RibbonControl1_Click);
             // 
             // barButtonItem1
@@ -317,13 +321,13 @@
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem8_ItemClick);
             // 
-            // oa
+            // btnHoaDon
             // 
-            this.oa.Caption = "Hóa đơn";
-            this.oa.Id = 24;
-            this.oa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("oa.ImageOptions.SvgImage")));
-            this.oa.LargeWidth = 100;
-            this.oa.Name = "oa";
+            this.btnHoaDon.Caption = "Hóa đơn";
+            this.btnHoaDon.Id = 24;
+            this.btnHoaDon.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("oa.ImageOptions.SvgImage")));
+            this.btnHoaDon.LargeWidth = 100;
+            this.btnHoaDon.Name = "btnHoaDon";
             // 
             // barButtonItem9
             // 
@@ -332,6 +336,7 @@
             this.barButtonItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
             this.barButtonItem9.LargeWidth = 100;
             this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem9_ItemClick);
             // 
             // barButtonItem10
             // 
@@ -514,7 +519,7 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.oa);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnHoaDon);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPageGroup12
@@ -540,133 +545,194 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.grbChiTietPhong);
+            this.panel2.Controls.Add(this.gbThongTin);
             this.panel2.Controls.Add(this.tclTang1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 193);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1148, 246);
+            this.panel2.Size = new System.Drawing.Size(1414, 246);
             this.panel2.TabIndex = 2;
             // 
-            // grbChiTietPhong
+            // gbThongTin
             // 
-            this.grbChiTietPhong.Controls.Add(this.pictureBox3);
-            this.grbChiTietPhong.Controls.Add(this.pictureBox2);
-            this.grbChiTietPhong.Controls.Add(this.lblChiTietSoPhong);
-            this.grbChiTietPhong.Controls.Add(this.label4);
-            this.grbChiTietPhong.Controls.Add(this.lblDientich);
-            this.grbChiTietPhong.Controls.Add(this.label3);
-            this.grbChiTietPhong.Controls.Add(this.label2);
-            this.grbChiTietPhong.Controls.Add(this.label1);
-            this.grbChiTietPhong.Controls.Add(this.lblGiaPhong);
-            this.grbChiTietPhong.Controls.Add(this.pictureBox1);
-            this.grbChiTietPhong.Location = new System.Drawing.Point(809, 24);
-            this.grbChiTietPhong.Name = "grbChiTietPhong";
-            this.grbChiTietPhong.Size = new System.Drawing.Size(328, 222);
-            this.grbChiTietPhong.TabIndex = 1;
-            this.grbChiTietPhong.TabStop = false;
+            this.gbThongTin.Controls.Add(this.cbPhong);
+            this.gbThongTin.Controls.Add(this.label8);
+            this.gbThongTin.Controls.Add(this.label7);
+            this.gbThongTin.Controls.Add(this.rbtnNu);
+            this.gbThongTin.Controls.Add(this.rbtnNam);
+            this.gbThongTin.Controls.Add(this.dtpNamSinh);
+            this.gbThongTin.Controls.Add(this.txtCMND);
+            this.gbThongTin.Controls.Add(this.label6);
+            this.gbThongTin.Controls.Add(this.txtQueQuan);
+            this.gbThongTin.Controls.Add(this.label5);
+            this.gbThongTin.Controls.Add(this.txtSDT);
+            this.gbThongTin.Controls.Add(this.label4);
+            this.gbThongTin.Controls.Add(this.label3);
+            this.gbThongTin.Controls.Add(this.txtHoten);
+            this.gbThongTin.Controls.Add(this.label2);
+            this.gbThongTin.Controls.Add(this.txtMaKH);
+            this.gbThongTin.Controls.Add(this.label1);
+            this.gbThongTin.Location = new System.Drawing.Point(809, 11);
+            this.gbThongTin.Name = "gbThongTin";
+            this.gbThongTin.Size = new System.Drawing.Size(564, 235);
+            this.gbThongTin.TabIndex = 1;
+            this.gbThongTin.TabStop = false;
+            this.gbThongTin.Text = "Thông tin";
             // 
-            // pictureBox3
+            // cbPhong
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(6, 170);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 35);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
+            this.cbPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPhong.FormattingEnabled = true;
+            this.cbPhong.Location = new System.Drawing.Point(373, 199);
+            this.cbPhong.Name = "cbPhong";
+            this.cbPhong.Size = new System.Drawing.Size(121, 24);
+            this.cbPhong.TabIndex = 8;
             // 
-            // pictureBox2
+            // label8
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(6, 27);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(299, 202);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 17);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Phòng";
             // 
-            // lblChiTietSoPhong
+            // label7
             // 
-            this.lblChiTietSoPhong.AutoSize = true;
-            this.lblChiTietSoPhong.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lblChiTietSoPhong.Location = new System.Drawing.Point(175, 32);
-            this.lblChiTietSoPhong.Name = "lblChiTietSoPhong";
-            this.lblChiTietSoPhong.Size = new System.Drawing.Size(55, 30);
-            this.lblChiTietSoPhong.TabIndex = 7;
-            this.lblChiTietSoPhong.Text = "102";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(299, 143);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 17);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Giới tính";
+            // 
+            // rbtnNu
+            // 
+            this.rbtnNu.AutoSize = true;
+            this.rbtnNu.Location = new System.Drawing.Point(447, 143);
+            this.rbtnNu.Name = "rbtnNu";
+            this.rbtnNu.Size = new System.Drawing.Size(47, 21);
+            this.rbtnNu.TabIndex = 7;
+            this.rbtnNu.Text = "Nữ";
+            this.rbtnNu.UseVisualStyleBackColor = true;
+            // 
+            // rbtnNam
+            // 
+            this.rbtnNam.AutoSize = true;
+            this.rbtnNam.Checked = true;
+            this.rbtnNam.Location = new System.Drawing.Point(373, 143);
+            this.rbtnNam.Name = "rbtnNam";
+            this.rbtnNam.Size = new System.Drawing.Size(57, 21);
+            this.rbtnNam.TabIndex = 6;
+            this.rbtnNam.TabStop = true;
+            this.rbtnNam.Text = "Nam";
+            this.rbtnNam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbtnNam.UseVisualStyleBackColor = true;
+            // 
+            // dtpNamSinh
+            // 
+            this.dtpNamSinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNamSinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNamSinh.Location = new System.Drawing.Point(76, 143);
+            this.dtpNamSinh.Name = "dtpNamSinh";
+            this.dtpNamSinh.ShowUpDown = true;
+            this.dtpNamSinh.Size = new System.Drawing.Size(161, 23);
+            this.dtpNamSinh.TabIndex = 2;
+            // 
+            // txtCMND
+            // 
+            this.txtCMND.Location = new System.Drawing.Point(373, 29);
+            this.txtCMND.MaxLength = 9;
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(173, 23);
+            this.txtCMND.TabIndex = 4;
+            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCMND_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(299, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "CMND";
+            // 
+            // txtQueQuan
+            // 
+            this.txtQueQuan.Location = new System.Drawing.Point(373, 88);
+            this.txtQueQuan.Name = "txtQueQuan";
+            this.txtQueQuan.Size = new System.Drawing.Size(173, 23);
+            this.txtQueQuan.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(299, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Quê quán";
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(76, 196);
+            this.txtSDT.MaxLength = 11;
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(161, 23);
+            this.txtSDT.TabIndex = 3;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSDT_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label4.Location = new System.Drawing.Point(65, 32);
+            this.label4.Location = new System.Drawing.Point(6, 202);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 30);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Phòng:";
-            // 
-            // lblDientich
-            // 
-            this.lblDientich.AutoSize = true;
-            this.lblDientich.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lblDientich.Location = new System.Drawing.Point(175, 173);
-            this.lblDientich.Name = "lblDientich";
-            this.lblDientich.Size = new System.Drawing.Size(41, 30);
-            this.lblDientich.TabIndex = 5;
-            this.lblDientich.Text = "30";
+            this.label4.Size = new System.Drawing.Size(34, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "SDT";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label3.Location = new System.Drawing.Point(222, 173);
+            this.label3.Location = new System.Drawing.Point(6, 149);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 30);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "m2";
+            this.label3.Size = new System.Drawing.Size(64, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Năm sinh";
+            // 
+            // txtHoten
+            // 
+            this.txtHoten.Location = new System.Drawing.Point(76, 91);
+            this.txtHoten.Name = "txtHoten";
+            this.txtHoten.Size = new System.Drawing.Size(201, 23);
+            this.txtHoten.TabIndex = 1;
+            this.txtHoten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtHoten_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label2.Location = new System.Drawing.Point(65, 173);
+            this.label2.Location = new System.Drawing.Point(6, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 30);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Diện tích:";
+            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Họ tên";
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.Location = new System.Drawing.Point(76, 29);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(196, 23);
+            this.txtMaKH.TabIndex = 0;
+            this.txtMaKH.Leave += new System.EventHandler(this.TxtMaKH_Leave);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label1.Location = new System.Drawing.Point(65, 101);
+            this.label1.Location = new System.Drawing.Point(9, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 30);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Giá:";
-            // 
-            // lblGiaPhong
-            // 
-            this.lblGiaPhong.AutoSize = true;
-            this.lblGiaPhong.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lblGiaPhong.Location = new System.Drawing.Point(175, 101);
-            this.lblGiaPhong.Name = "lblGiaPhong";
-            this.lblGiaPhong.Size = new System.Drawing.Size(127, 30);
-            this.lblGiaPhong.TabIndex = 1;
-            this.lblGiaPhong.Text = "3,500,000";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 96);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã KH";
             // 
             // tclTang1
             // 
@@ -680,7 +746,6 @@
             this.tclTang1.SelectedIndex = 0;
             this.tclTang1.Size = new System.Drawing.Size(803, 246);
             this.tclTang1.TabIndex = 0;
-            this.tclTang1.SelectedIndexChanged += new System.EventHandler(this.TclTang1_SelectedIndexChanged);
             // 
             // tabTang1
             // 
@@ -766,7 +831,6 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 1;
             this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.PictureBox7_Click);
             // 
             // pictureBox6
             // 
@@ -777,7 +841,6 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 1;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.PictureBox6_Click);
             // 
             // pictureBox5
             // 
@@ -788,7 +851,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.PictureBox5_Click);
             // 
             // pictureBox4
             // 
@@ -799,7 +861,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.PictureBox4_Click);
             // 
             // lblPhong108
             // 
@@ -1317,6 +1378,7 @@
             this.lblPhong301.Text = "P301 ";
             this.lblPhong301.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblPhong301.Click += new System.EventHandler(this.LblPhong301_Click);
+            this.lblPhong301.DoubleClick += new System.EventHandler(this.LblPhong301_DoubleClick);
             this.lblPhong301.MouseLeave += new System.EventHandler(this.Label5_MouseLeave);
             this.lblPhong301.MouseHover += new System.EventHandler(this.Label7_MouseHover);
             // 
@@ -1336,7 +1398,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 439);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1148, 280);
+            this.panel3.Size = new System.Drawing.Size(1414, 313);
             this.panel3.TabIndex = 7;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3_Paint);
             // 
@@ -1362,12 +1424,13 @@
             this.dgvTrangChu.RowHeadersWidth = 51;
             this.dgvTrangChu.RowTemplate.Height = 24;
             this.dgvTrangChu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTrangChu.Size = new System.Drawing.Size(1137, 252);
+            this.dgvTrangChu.Size = new System.Drawing.Size(1373, 271);
             this.dgvTrangChu.TabIndex = 0;
-            this.dgvTrangChu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTrangChu_CellContentClick);
+            this.dgvTrangChu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTrangChu_CellContentClick);
             // 
             // clmMaKH
             // 
+            this.clmMaKH.FillWeight = 30F;
             this.clmMaKH.HeaderText = "Mã KH";
             this.clmMaKH.MinimumWidth = 6;
             this.clmMaKH.Name = "clmMaKH";
@@ -1375,6 +1438,7 @@
             // 
             // clmMaPhong
             // 
+            this.clmMaPhong.FillWeight = 34.83575F;
             this.clmMaPhong.HeaderText = "Mã phòng";
             this.clmMaPhong.MinimumWidth = 6;
             this.clmMaPhong.Name = "clmMaPhong";
@@ -1382,6 +1446,7 @@
             // 
             // clmHoten
             // 
+            this.clmHoten.FillWeight = 34.83575F;
             this.clmHoten.HeaderText = "Họ tên";
             this.clmHoten.MinimumWidth = 6;
             this.clmHoten.Name = "clmHoten";
@@ -1389,6 +1454,7 @@
             // 
             // clmNamsinh
             // 
+            this.clmNamsinh.FillWeight = 34.83575F;
             this.clmNamsinh.HeaderText = "Năm sinh";
             this.clmNamsinh.MinimumWidth = 6;
             this.clmNamsinh.Name = "clmNamsinh";
@@ -1396,6 +1462,7 @@
             // 
             // clmSdt
             // 
+            this.clmSdt.FillWeight = 34.83575F;
             this.clmSdt.HeaderText = "Số điện thoại";
             this.clmSdt.MinimumWidth = 6;
             this.clmSdt.Name = "clmSdt";
@@ -1403,6 +1470,7 @@
             // 
             // clmCMND
             // 
+            this.clmCMND.FillWeight = 34.83575F;
             this.clmCMND.HeaderText = "CMND";
             this.clmCMND.MinimumWidth = 6;
             this.clmCMND.Name = "clmCMND";
@@ -1410,6 +1478,7 @@
             // 
             // clmQuequan
             // 
+            this.clmQuequan.FillWeight = 34.83575F;
             this.clmQuequan.HeaderText = "Quê quán";
             this.clmQuequan.MinimumWidth = 6;
             this.clmQuequan.Name = "clmQuequan";
@@ -1417,6 +1486,7 @@
             // 
             // clmGioitinh
             // 
+            this.clmGioitinh.FillWeight = 34.83575F;
             this.clmGioitinh.HeaderText = "Giới tính";
             this.clmGioitinh.MinimumWidth = 6;
             this.clmGioitinh.Name = "clmGioitinh";
@@ -1426,14 +1496,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 719);
+            this.ClientSize = new System.Drawing.Size(1414, 752);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ribbonControl1);
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("FormTrangChu.IconOptions.SvgImage")));
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximumSize = new System.Drawing.Size(1150, 720);
-            this.MinimumSize = new System.Drawing.Size(1150, 720);
             this.Name = "FormTrangChu";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1444,11 +1513,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.grbChiTietPhong.ResumeLayout(false);
-            this.grbChiTietPhong.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gbThongTin.ResumeLayout(false);
+            this.gbThongTin.PerformLayout();
             this.tclTang1.ResumeLayout(false);
             this.tabTang1.ResumeLayout(false);
             this.pnlTang1.ResumeLayout(false);
@@ -1490,10 +1556,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TabControl tclTang1;
-        private System.Windows.Forms.TabPage tabTang1;
-        private System.Windows.Forms.Panel pnlTang1;
-        private System.Windows.Forms.TabPage tabTang2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
@@ -1504,20 +1566,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private System.Windows.Forms.GroupBox grbChiTietPhong;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblGiaPhong;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblDientich;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblChiTietSoPhong;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabPage tabTang3;
-        private System.Windows.Forms.Panel pnltang2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
@@ -1531,7 +1579,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
-        private DevExpress.XtraBars.BarButtonItem oa;
+        private DevExpress.XtraBars.BarButtonItem btnHoaDon;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
@@ -1551,14 +1599,11 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
-        private System.Windows.Forms.Label lblPhong108;
-        private System.Windows.Forms.Label lblPhong104;
-        private System.Windows.Forms.Label lblPhong107;
-        private System.Windows.Forms.Label lblPhong103;
-        private System.Windows.Forms.Label lblPhong106;
-        private System.Windows.Forms.Label lblPhong102;
-        private System.Windows.Forms.Label lblPhong105;
-        private System.Windows.Forms.Label lblPhong101;
+        private System.Windows.Forms.DataGridView dgvTrangChu;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private System.Windows.Forms.TabControl tclTang1;
+        private System.Windows.Forms.TabPage tabTang1;
+        private System.Windows.Forms.Panel pnlTang1;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox9;
@@ -1567,6 +1612,16 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lblPhong108;
+        private System.Windows.Forms.Label lblPhong104;
+        private System.Windows.Forms.Label lblPhong107;
+        private System.Windows.Forms.Label lblPhong103;
+        private System.Windows.Forms.Label lblPhong106;
+        private System.Windows.Forms.Label lblPhong102;
+        private System.Windows.Forms.Label lblPhong105;
+        private System.Windows.Forms.Label lblPhong101;
+        private System.Windows.Forms.TabPage tabTang2;
+        private System.Windows.Forms.Panel pnltang2;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
@@ -1583,6 +1638,8 @@
         private System.Windows.Forms.Label lblPhong202;
         private System.Windows.Forms.Label lblPhong205;
         private System.Windows.Forms.Label lblPhong201;
+        private System.Windows.Forms.TabPage tabTang3;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.PictureBox pictureBox21;
         private System.Windows.Forms.PictureBox pictureBox22;
@@ -1591,8 +1648,24 @@
         private System.Windows.Forms.Label lblPhong303;
         private System.Windows.Forms.Label lblPhong302;
         private System.Windows.Forms.Label lblPhong301;
-        private System.Windows.Forms.DataGridView dgvTrangChu;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private System.Windows.Forms.GroupBox gbThongTin;
+        private System.Windows.Forms.ComboBox cbPhong;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton rbtnNu;
+        private System.Windows.Forms.RadioButton rbtnNam;
+        private System.Windows.Forms.DateTimePicker dtpNamSinh;
+        private System.Windows.Forms.TextBox txtCMND;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtQueQuan;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtHoten;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtMaKH;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmHoten;

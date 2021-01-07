@@ -28,12 +28,6 @@ namespace QL_PhongTro.Data
         [StringLength(5)]
         public string Mã_phòng { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime NgayLapHD { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime NgayhethanHD { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hóa_đơn> Hóa_đơn { get; set; }
 

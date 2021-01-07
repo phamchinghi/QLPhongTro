@@ -41,32 +41,36 @@ namespace QL_PhongTro
         private void BtnLuu_Click(object sender, EventArgs e)
         {
             List<Tài_khoản> listTaiKhoan = DB.Tài_khoản.ToList();
-            //Tài_khoản tài_Khoản = DB.Tài_khoản.FirstOrDefault(p => p.MaNV == txtMaNV.Text);
-            foreach (var item in listTaiKhoan)
+            Tài_khoản tk = DB.Tài_khoản.FirstOrDefault(p => p.Password == txtmkhientai.Text);
+            if (checkPassword(txtmkhientai.Text))//kiểm tra mk cũ vơi mk hiện tại
             {
-                if (txtmkhientai.Text == item.Password)//kiểm tra mk cũ vơi mk hiện tại
+                if (txtmkmoi.Text == txtcapnhatmkmoi.Text)
                 {
-                    if (txtmkmoi.Text == txtcapnhatmkmoi.Text)
-                    {
-                        item.Password = txtmkmoi.Text;
-                        DB.SaveChanges();
-                        MessageBox.Show("Đổi mật khẩu thành công");
-                        txtmkhientai.Clear();
-                        txtmkmoi.Clear();
-                        txtmkmoi.Clear();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Mật khẩu xác nhận chưa chính xác");
-                    }
+                    tk.Password = txtmkmoi.Text;
+                    DB.SaveChanges();
+                    MessageBox.Show("Đổi mật khẩu thành công");
+                    txtmkhientai.Clear();
+                    txtmkmoi.Clear();
+                    txtcapnhatmkmoi.Clear();
+                    txtmkhientai.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu cũ chưa chính xác");
+                    MessageBox.Show("Mật khẩu xác nhận chưa chính xác");
                 }
             }
+            else
+            {
+                MessageBox.Show("Mật khẩu cũ chưa chính xác");
+            }
         }
-
+        bool checkPassword(string password)
+        {
+            string query = "exec dbo._GetPassword @password = '" + txtmkhientai.Text + "'";
+            DataConnection.Instance.ExcData(query);
+            DataTable result = DataConnection.Instance.readData(query);
+            return result.Rows.Count > 0;
+        }
         private void BtnDong_Click(object sender, EventArgs e)
         {
             Close();

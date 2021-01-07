@@ -31,10 +31,6 @@ namespace QL_PhongTro
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSuaTB));
             this.dgvThietBi = new System.Windows.Forms.DataGridView();
-            this.maTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,49 +42,37 @@ namespace QL_PhongTro
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.maTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenTB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNgayTrangBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvThietBi
             // 
+            this.dgvThietBi.AllowUserToAddRows = false;
+            this.dgvThietBi.AllowUserToDeleteRows = false;
             this.dgvThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThietBi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maTB,
             this.tenTB,
+            this.clmNgayTrangBi,
             this.dongia,
             this.sl});
             this.dgvThietBi.Location = new System.Drawing.Point(12, 236);
             this.dgvThietBi.Name = "dgvThietBi";
+            this.dgvThietBi.ReadOnly = true;
             this.dgvThietBi.RowHeadersWidth = 51;
             this.dgvThietBi.RowTemplate.Height = 24;
+            this.dgvThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThietBi.Size = new System.Drawing.Size(930, 270);
             this.dgvThietBi.TabIndex = 0;
-            // 
-            // maTB
-            // 
-            this.maTB.HeaderText = "Mã Thiết Bị";
-            this.maTB.MinimumWidth = 6;
-            this.maTB.Name = "maTB";
-            // 
-            // tenTB
-            // 
-            this.tenTB.HeaderText = "Tên Thiết Bị";
-            this.tenTB.MinimumWidth = 6;
-            this.tenTB.Name = "tenTB";
-            // 
-            // dongia
-            // 
-            this.dongia.HeaderText = "Đơn Giá";
-            this.dongia.MinimumWidth = 6;
-            this.dongia.Name = "dongia";
-            // 
-            // sl
-            // 
-            this.sl.HeaderText = "Số Lượng";
-            this.sl.MinimumWidth = 6;
-            this.sl.Name = "sl";
             // 
             // btnSua
             // 
@@ -110,10 +94,12 @@ namespace QL_PhongTro
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.cbSoLuong);
             this.groupBox1.Controls.Add(this.txtTenThietBi);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtDonGia);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtMaTB);
@@ -124,6 +110,7 @@ namespace QL_PhongTro
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
+            this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
             // cbSoLuong
             // 
@@ -164,7 +151,7 @@ namespace QL_PhongTro
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(299, 61);
+            this.label3.Location = new System.Drawing.Point(291, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 0;
@@ -195,6 +182,63 @@ namespace QL_PhongTro
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã thiết bị";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(291, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Phòng";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3"});
+            this.comboBox1.Location = new System.Drawing.Point(360, 95);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 24);
+            this.comboBox1.TabIndex = 2;
+            // 
+            // maTB
+            // 
+            this.maTB.HeaderText = "Mã Thiết Bị";
+            this.maTB.MinimumWidth = 6;
+            this.maTB.Name = "maTB";
+            this.maTB.ReadOnly = true;
+            // 
+            // tenTB
+            // 
+            this.tenTB.HeaderText = "Tên Thiết Bị";
+            this.tenTB.MinimumWidth = 6;
+            this.tenTB.Name = "tenTB";
+            this.tenTB.ReadOnly = true;
+            // 
+            // clmNgayTrangBi
+            // 
+            this.clmNgayTrangBi.HeaderText = "Ngày trang bị";
+            this.clmNgayTrangBi.MinimumWidth = 6;
+            this.clmNgayTrangBi.Name = "clmNgayTrangBi";
+            this.clmNgayTrangBi.ReadOnly = true;
+            // 
+            // dongia
+            // 
+            this.dongia.HeaderText = "Đơn Giá";
+            this.dongia.MinimumWidth = 6;
+            this.dongia.Name = "dongia";
+            this.dongia.ReadOnly = true;
+            // 
+            // sl
+            // 
+            this.sl.HeaderText = "Số Lượng";
+            this.sl.MinimumWidth = 6;
+            this.sl.Name = "sl";
+            this.sl.ReadOnly = true;
+            // 
             // FormSuaTB
             // 
             this.Appearance.Options.UseFont = true;
@@ -223,10 +267,6 @@ namespace QL_PhongTro
         #endregion
 
         private System.Windows.Forms.DataGridView dgvThietBi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maTB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenTB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dongia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sl;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -238,5 +278,12 @@ namespace QL_PhongTro
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaTB;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maTB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenTB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmNgayTrangBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dongia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sl;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -40,34 +40,38 @@ namespace QL_PhongTro
             skin();
             try
             {
-                List<DỊch_vụ> listdv = DB.DỊch_vụ.ToList();
-                Bingrid(listdv);
+                Bingrid();
             }
-            catch (Exception err)
+            catch
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show("Không thể load dữ liệu lên hoặc không có dữ liệu để load","Thông báo");
             }
         }
-        private void Bingrid(List<DỊch_vụ> listdv)
+        private void Bingrid()
         {
-            foreach(TextBox txt in pnlGiaTruoc.Controls)
+            //List<Điện> listDien;
+            //List<Nước> listNuoc;
+            //List<Wifi> listWifi;
+            //List<Rác> listRac;
+            //List<Xe> listGiuXe;              
+            foreach (TextBox txt in pnlGiaTruoc.Controls)
             {
                 txt.ReadOnly = true;
             }
-            DỊch_vụ dbDien = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "DD");
-            txtGiaDienTruoc.Text = dbDien.Giá_DV.ToString().Trim();
+            Điện dbDien = DB.Điện.FirstOrDefault(p => p.Mã_điện == "DD");
+            txtGiaDienTruoc.Text = dbDien.Giá_điện.ToString().Trim();
 
-            DỊch_vụ dbNuoc = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "NN");
-            txtGiaNuocTruoc.Text = dbNuoc.Giá_DV.ToString().Trim();
+            Nước dbNuoc = DB.Nước.FirstOrDefault(p => p.Mã_nước == "NN");
+            txtGiaNuocTruoc.Text = dbNuoc.Giá_nước.ToString().Trim();
 
-            DỊch_vụ dbWifi = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "WF");
-            txtGiaWifiTruoc.Text = dbWifi.Giá_DV.ToString().Trim();
+            Wifi dbWifi = DB.Wifis.FirstOrDefault(p => p.Mã_wifi == "WF");
+            txtGiaWifiTruoc.Text = dbWifi.Giá_wifi.ToString().Trim();
 
-            DỊch_vụ dbXe = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "GX");
-            txtGiaXeTruoc.Text = dbXe.Giá_DV.ToString().Trim();
+            Xe dbXe = DB.Xes.FirstOrDefault(p => p.Mã_xe == "GX");
+            txtGiaXeTruoc.Text = dbXe.Giá_xe.ToString().Trim();
 
-            DỊch_vụ dbRac = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "RC");
-            txtGiaRacTruoc.Text = dbRac.Giá_DV.ToString().Trim();
+            Rác dbRac = DB.Rác.FirstOrDefault(p => p.Mã_rác == "RC");
+            txtGiaRacTruoc.Text = dbRac.Giá_rác.ToString().Trim();
         }
 
         private void BtnDong_Click(object sender, EventArgs e)
@@ -77,25 +81,32 @@ namespace QL_PhongTro
 
         private void BtnCapnhat_Click_1(object sender, EventArgs e)
         {
-            List<DỊch_vụ> listDV = DB.DỊch_vụ.ToList();
-            DỊch_vụ dbGiaDien = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "DD");
-            DỊch_vụ dbGiaNuoc = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "NN");
-            DỊch_vụ dbGiaXe = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "GX");
-            DỊch_vụ dbWifi = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "WF");
-            DỊch_vụ dbRac = DB.DỊch_vụ.FirstOrDefault(p => p.Mã_DV == "RC");
-
-            dbGiaDien.Giá_DV = int.Parse(txtGiaDienSau.Text);
-            dbGiaNuoc.Giá_DV = int.Parse(txtGiaNuocSau.Text);
-            dbGiaXe.Giá_DV = int.Parse(txtGiaXeSau.Text);
-            dbWifi.Giá_DV = int.Parse(txtGiaWifiSau.Text);
-            dbRac.Giá_DV = int.Parse(txtGiaRacSau.Text);
-            DB.SaveChanges();
-            foreach(TextBox txt in pnlSau.Controls)
+            if(txtGiaDienSau.Text != "" || txtGiaNuocSau.Text != "" || txtGiaRacSau.Text != "" || txtGiaWifiSau.Text != "" | txtGiaXeSau.Text != "")
             {
-                txt.Clear();
+                //List<Điện> listDV = DB.DỊch_vụ.ToList();
+                Điện dbGiaDien = DB.Điện.FirstOrDefault(p => p.Mã_điện == "DD");
+                Nước dbGiaNuoc = DB.Nước.FirstOrDefault(p => p.Mã_nước == "NN");
+                Xe dbGiaXe = DB.Xes.FirstOrDefault(p => p.Mã_xe== "GX");
+                Wifi dbWifi = DB.Wifis.FirstOrDefault(p => p.Mã_wifi == "WF");
+                Rác dbRac = DB.Rác.FirstOrDefault(p => p.Mã_rác == "RC");
+
+                dbGiaDien.Giá_điện = int.Parse(txtGiaDienSau.Text);
+                dbGiaNuoc.Giá_nước = int.Parse(txtGiaNuocSau.Text);
+                dbGiaXe.Giá_xe     = int.Parse(txtGiaXeSau.Text);
+                dbWifi.Giá_wifi    = int.Parse(txtGiaWifiSau.Text);
+                dbRac.Giá_rác      = int.Parse(txtGiaRacSau.Text);
+                DB.SaveChanges();
+                foreach(TextBox txt in pnlSau.Controls)
+                {
+                    txt.Clear();
+                }
+                Bingrid();
+                MessageBox.Show("Cập nhật thành công","Thông báo");
             }
-            Bingrid(listDV);
-            MessageBox.Show("Cập nhật thành công","Thông báo");
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

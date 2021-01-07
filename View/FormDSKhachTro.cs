@@ -43,8 +43,6 @@ namespace QL_PhongTro
                 this.Close();
             }
         }
-        //private void BindingGrid(List<Khách_hàng> khách_Hàngs)
-        //{
         private void BindingGrid()
         {
                 //dgvDSKhachTro.Rows.Clear();
@@ -61,6 +59,8 @@ namespace QL_PhongTro
                 //    //dgvDSKhachTro.Rows[index].Cells[6].Value = item.CMND;
                 //    dgvDSKhachTro.DataSource = khách_Hàngs;
                 //}
+
+            //Đổ dữ liệu bằng truy vấn query
 
             string query = "select * from DSKhachHang";
             DataConnection.Instance.ExcData(query);
@@ -82,6 +82,7 @@ namespace QL_PhongTro
             
             try
             {
+                // tạo đường dẫn luu file
                 string saveExcelFile = @"C:\Users\HP\Desktop\DSKH.xlsx";
                 Excel.Application xlApp = new Excel.Application();
                 if(xlApp == null)
@@ -201,7 +202,7 @@ namespace QL_PhongTro
                     stt++;
                     row++;
                     //Các đối tượng thuộc kiểu dynamic sẽ không xác định được kiểu cho đến khi chương trình được thực thi. Tức là trình biên dịch sẽ bỏ qua tất cả lỗi về cú pháp, việc kiểm tra này sẽ thực hiện khi chương trình thực thi
-                    dynamic[] arr = { stt, KH.Mã_KH, KH.Tên_KH, KH.Năm_sinh.ToShortDateString(), KH.Sđt,KH.Giới_tính, KH.Quê_quán, KH.CMND };
+                    dynamic[] arr = { stt, KH.Mã_KH, KH.Tên_KH, KH.Năm_sinh.ToString(), KH.Sđt,KH.Giới_tính, KH.Quê_quán, KH.CMND };
                     Range rowData = workSheet.get_Range("A" + row, "H" + row);//lấy dòng thứ row để bỏ 
                     rowData.Font.Size = fontSizeNoiDung;
                     rowData.Font.Name = fontName;

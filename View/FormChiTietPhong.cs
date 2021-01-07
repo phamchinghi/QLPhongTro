@@ -70,7 +70,8 @@ namespace QL_PhongTro
 
         private void bbtnThuePhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            FormThemKhachTro frmThemKhachTro = new FormThemKhachTro();
+            frmThemKhachTro.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)

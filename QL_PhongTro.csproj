@@ -62,6 +62,12 @@
       <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.WinForms.v12.12.0.0.0\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -94,20 +100,27 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\DataConnection.cs" />
+    <Compile Include="DataConnection.cs" />
     <Compile Include="Data\CT_TrangBi.cs" />
     <Compile Include="Data\DB_QLPhongTro.cs" />
-    <Compile Include="Data\DỊch_vụ.cs" />
+    <Compile Include="Data\DSKhachHang.cs" />
     <Compile Include="Data\HOPDONG.cs" />
     <Compile Include="Data\Hóa_đơn.cs" />
     <Compile Include="Data\Khách_hàng.cs" />
     <Compile Include="Data\Loại_phòng.cs" />
     <Compile Include="Data\Loại_thiết_bị.cs" />
+    <Compile Include="Data\Nước.cs" />
     <Compile Include="Data\Phòng.cs" />
+    <Compile Include="Data\Rác.cs" />
     <Compile Include="Data\sysdiagram.cs" />
     <Compile Include="Data\Thiết_bị.cs" />
     <Compile Include="Data\Thống_kê.cs" />
+    <Compile Include="Data\Trangchu.cs" />
     <Compile Include="Data\Tài_khoản.cs" />
+    <Compile Include="Data\Wifi.cs" />
+    <Compile Include="Data\Xe.cs" />
+    <Compile Include="Data\Điện.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="View\FormCapNhat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +318,21 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

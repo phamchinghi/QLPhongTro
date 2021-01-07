@@ -25,8 +25,8 @@ namespace QL_PhongTro.Data
         [StringLength(30)]
         public string Tên_KH { get; set; }
 
-        [Column("Năm sinh", TypeName = "date")]
-        public DateTime Năm_sinh { get; set; }
+        [Column("Năm sinh")]
+        public DateTime? Năm_sinh { get; set; }
 
         [Required]
         [StringLength(10)]
@@ -42,7 +42,12 @@ namespace QL_PhongTro.Data
         public string Quê_quán { get; set; }
 
         [Column("Giới tính")]
+        [StringLength(4)]
         public string Giới_tính { get; set; }
+
+        [Column("Mã phòng")]
+        [StringLength(5)]
+        public string Mã_phòng { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
