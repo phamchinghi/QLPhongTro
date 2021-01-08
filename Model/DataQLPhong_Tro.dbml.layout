@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.875, 12.75" name="DataQLPhong_Tro">
+  <DataContextMoniker Name="/DataQLPhong_TroDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5072f6bc-255e-4c83-9dd6-e12570a3a600" absoluteBounds="17.625, 1, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/CT_TrangBi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15247293-a029-4bbb-a861-e5188a62c262" absoluteBounds="17.64, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6d7143a-0a6a-4710-9084-ad151659aa3b" absoluteBounds="11.5, 10.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/DỊch_vụ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="422f7765-55e5-4ac3-882b-ad667b4b566d" absoluteBounds="11.515, 11.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f9c5c3c1-7934-4b66-83ce-da51328aeaf3" absoluteBounds="10.375, 7.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/Hóa_đơn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e5b527b-2675-499f-9189-08e440ccb81d" absoluteBounds="10.39, 8.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="acaa1931-c611-4c99-9d15-f41da5f54dad" absoluteBounds="14.375, 4.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/HOPDONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51e823f1-5d65-4e1b-9b7f-cea009b07f56" absoluteBounds="14.39, 4.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bcbf4e5b-481e-4acf-a25d-4e16e5150d32" absoluteBounds="18.625, 4.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/Khách_hàng" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c727d8e1-2977-47a7-9706-aed422dfcabe" absoluteBounds="18.64, 5.2100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="06fc9cee-693e-41d8-a2fb-8281988f1208" absoluteBounds="11.875, 2.5, 2, 1.0016910807291664">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/Loại_thiết_bị" />
+      <nestedChildShapes>
+        <elementListCompartment Id="517bd2b3-3f36-40ff-9451-d20e8b8cb573" absoluteBounds="11.89, 2.96, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30ebf64b-69f5-4120-81c9-2a38637ef77a" absoluteBounds="1.25, 1.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/Loại_phòng" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d9b0ada-e2fc-4258-9985-4f585e16276c" absoluteBounds="1.2650000000000001, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b2b3ae0-dc2b-42ad-a4be-c87f4eedf692" absoluteBounds="5.125, 5.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/Nhân_viên_QL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dde7aa49-774e-4769-ba1e-c4255b82b4e5" absoluteBounds="5.1400000000000006, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4e1ef5c8-5cf6-401a-a828-3fa106863179" absoluteBounds="7.75, 0.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/Phòng" />
+      <nestedChildShapes>
+        <elementListCompartment Id="37b72ae3-0df7-4add-8731-650c5fd90049" absoluteBounds="7.7650000000000006, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="100bc37c-5fb4-4893-8798-5a8a901d98f5" absoluteBounds="3.75, 8.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/Tài_khoản" />
+      <nestedChildShapes>
+        <elementListCompartment Id="660a16d0-e89d-461b-bdb9-c52f67c25654" absoluteBounds="3.765, 8.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57892af0-cef5-4837-9434-f6db32b892b8" absoluteBounds="14.625, 2.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/Thiết_bị" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b755c545-1490-43e9-9f7c-2a0590b4d5b2" absoluteBounds="14.64, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b736ea1f-6109-4681-a848-2f60725c85d4" absoluteBounds="1.125, 3.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataQLPhong_TroDataContext/Thống_kê" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b31cd4c-1eec-4dc2-808e-84f6760c2fb5" absoluteBounds="1.1400000000000001, 3.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.9375 : 10.875); (11.9375 : 9.20359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/DỊch_vụ/DỊch_vụ_Hóa_đơn" />
+      <nodes>
+        <classShapeMoniker Id="b6d7143a-0a6a-4710-9084-ad151659aa3b" />
+        <classShapeMoniker Id="f9c5c3c1-7934-4b66-83ce-da51328aeaf3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.375 : 6.2131982421875); (15.375 : 8.41429768880208); (12.375 : 8.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/HOPDONG/HOPDONG_Hóa_đơn" />
+      <nodes>
+        <classShapeMoniker Id="acaa1931-c611-4c99-9d15-f41da5f54dad" />
+        <classShapeMoniker Id="f9c5c3c1-7934-4b66-83ce-da51328aeaf3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.625 : 5.48159912109375); (16.375 : 5.48159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/Khách_hàng/Khách_hàng_HOPDONG" />
+      <nodes>
+        <classShapeMoniker Id="bcbf4e5b-481e-4acf-a25d-4e16e5150d32" />
+        <classShapeMoniker Id="acaa1931-c611-4c99-9d15-f41da5f54dad" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 6.34699625651042); (11.375 : 6.34699625651042); (11.375 : 7.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/Nhân_viên_QL/Nhân_viên_QL_Hóa_đơn" />
+      <nodes>
+        <classShapeMoniker Id="0b2b3ae0-dc2b-42ad-a4be-c87f4eedf692" />
+        <classShapeMoniker Id="f9c5c3c1-7934-4b66-83ce-da51328aeaf3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 5.98159912109375); (14.375 : 5.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/Nhân_viên_QL/Nhân_viên_QL_HOPDONG" />
+      <nodes>
+        <classShapeMoniker Id="0b2b3ae0-dc2b-42ad-a4be-c87f4eedf692" />
+        <classShapeMoniker Id="acaa1931-c611-4c99-9d15-f41da5f54dad" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.75 : 1.53125); (17.625 : 1.53125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/Phòng/Phòng_CT_TrangBi" />
+      <nodes>
+        <classShapeMoniker Id="4e1ef5c8-5cf6-401a-a828-3fa106863179" />
+        <classShapeMoniker Id="5072f6bc-255e-4c83-9dd6-e12570a3a600" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 2.52089680989583); (8.75 : 4.89224562825521); (14.375 : 4.89224562825521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/Phòng/Phòng_HOPDONG" />
+      <nodes>
+        <classShapeMoniker Id="4e1ef5c8-5cf6-401a-a828-3fa106863179" />
+        <classShapeMoniker Id="acaa1931-c611-4c99-9d15-f41da5f54dad" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.25 : 1.94794840494792); (7.75 : 1.94794840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/Loại_phòng/Loại_phòng_Phòng" />
+      <nodes>
+        <classShapeMoniker Id="30ebf64b-69f5-4120-81c9-2a38637ef77a" />
+        <classShapeMoniker Id="4e1ef5c8-5cf6-401a-a828-3fa106863179" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.4375 : 6.94399251302083); (5.4375 : 8.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/Nhân_viên_QL/Nhân_viên_QL_Tài_khoản" />
+      <nodes>
+        <classShapeMoniker Id="0b2b3ae0-dc2b-42ad-a4be-c87f4eedf692" />
+        <classShapeMoniker Id="100bc37c-5fb4-4893-8798-5a8a901d98f5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.625 : 2.35179768880208); (17.625 : 2.35179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/Thiết_bị/Thiết_bị_CT_TrangBi" />
+      <nodes>
+        <classShapeMoniker Id="57892af0-cef5-4837-9434-f6db32b892b8" />
+        <classShapeMoniker Id="5072f6bc-255e-4c83-9dd6-e12570a3a600" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.875 : 3.00084554036458); (14.625 : 3.00084554036458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/Loại_thiết_bị/Loại_thiết_bị_Thiết_bị" />
+      <nodes>
+        <classShapeMoniker Id="06fc9cee-693e-41d8-a2fb-8281988f1208" />
+        <classShapeMoniker Id="57892af0-cef5-4837-9434-f6db32b892b8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.125 : 5.75); (6.125 : 4.09699625651042); (3.125 : 4.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLPhong_TroDataContext/Nhân_viên_QL/Nhân_viên_QL_Thống_kê" />
+      <nodes>
+        <classShapeMoniker Id="0b2b3ae0-dc2b-42ad-a4be-c87f4eedf692" />
+        <classShapeMoniker Id="b736ea1f-6109-4681-a848-2f60725c85d4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_Phong_Tro" Class="DataQLPhong_TroDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-MHLHFST\SQLEXPRESS;Initial Catalog=QL_Phong_Tro;Integrated Security=True" SettingsObjectName="QL_PhongTro.Properties.Settings" SettingsPropertyName="QL_Phong_TroConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CT_TrangBi" Member="CT_TrangBis">
+    <Type Name="CT_TrangBi">
+      <Column Name="[Mã phòng]" Member="Mã_phòng" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Ma thiết bị]" Member="Ma_thiết_bị" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[SL trang bi]" Member="SL_trang_bi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Ngay TB]" Member="Ngay_TB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Phòng_CT_TrangBi" Member="Phòng" ThisKey="Mã_phòng" OtherKey="Mã_phòng" Type="Phòng" IsForeignKey="true" />
+      <Association Name="Thiết_bị_CT_TrangBi" Member="Thiết_bị" ThisKey="Ma_thiết_bị" OtherKey="Ma_thiết_bị" Type="Thiết_bị" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[DỊch vụ]" Member="DỊch_vụs">
+    <Type Name="DỊch_vụ">
+      <Column Name="[Mã DV]" Member="Mã_DV" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Tên DV]" Member="Tên_DV" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DVT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="[Giá DV]" Member="Giá_DV" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="DỊch_vụ_Hóa_đơn" Member="Hóa_đơns" ThisKey="Mã_DV" OtherKey="Mã_DV" Type="Hóa_đơn" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Hóa đơn]" Member="Hóa_đơns">
+    <Type Name="Hóa_đơn">
+      <Column Name="[Số hóa đơn]" Member="Số_hóa_đơn" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="[Mã DV]" Member="Mã_DV" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="SoHD" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Association Name="DỊch_vụ_Hóa_đơn" Member="DỊch_vụ" ThisKey="Mã_DV" OtherKey="Mã_DV" Type="DỊch_vụ" IsForeignKey="true" />
+      <Association Name="HOPDONG_Hóa_đơn" Member="HOPDONG" ThisKey="SoHD" OtherKey="SoHD" Type="HOPDONG" IsForeignKey="true" />
+      <Association Name="Nhân_viên_QL_Hóa_đơn" Member="Nhân_viên_QL" ThisKey="MaNV" OtherKey="MaNV" Type="Nhân_viên_QL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOPDONG" Member="HOPDONGs">
+    <Type Name="HOPDONG">
+      <Column Name="SoHD" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayLapHD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ThoiHanHD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Mã KH]" Member="Mã_KH" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="[Mã phòng]" Member="Mã_phòng" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Association Name="HOPDONG_Hóa_đơn" Member="Hóa_đơns" ThisKey="SoHD" OtherKey="SoHD" Type="Hóa_đơn" />
+      <Association Name="Khách_hàng_HOPDONG" Member="Khách_hàng" ThisKey="Mã_KH" OtherKey="Mã_KH" Type="Khách_hàng" IsForeignKey="true" />
+      <Association Name="Nhân_viên_QL_HOPDONG" Member="Nhân_viên_QL" ThisKey="MaNV" OtherKey="MaNV" Type="Nhân_viên_QL" IsForeignKey="true" />
+      <Association Name="Phòng_HOPDONG" Member="Phòng" ThisKey="Mã_phòng" OtherKey="Mã_phòng" Type="Phòng" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Khách hàng]" Member="Khách_hàngs">
+    <Type Name="Khách_hàng">
+      <Column Name="[Mã KH]" Member="Mã_KH" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Tên KH]" Member="Tên_KH" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="[Năm sinh]" Member="Năm_sinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sđt" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.String" DbType="Char(9)" CanBeNull="true" />
+      <Column Name="[Quê quán]" Member="Quê_quán" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Khách_hàng_HOPDONG" Member="HOPDONGs" ThisKey="Mã_KH" OtherKey="Mã_KH" Type="HOPDONG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Loại thiết bị]" Member="Loại_thiết_bịs">
+    <Type Name="Loại_thiết_bị">
+      <Column Name="[Mã loại TB]" Member="Mã_loại_TB" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Loại_thiết_bị_Thiết_bị" Member="Thiết_bịs" ThisKey="Mã_loại_TB" OtherKey="Mã_loại_TB" Type="Thiết_bị" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Loại phòng]" Member="Loại_phòngs">
+    <Type Name="Loại_phòng">
+      <Column Name="[Mã loại phòng]" Member="Mã_loại_phòng" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Loại_phòng_Phòng" Member="Phòngs" ThisKey="Mã_loại_phòng" OtherKey="Mã_loại_phòng" Type="Phòng" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Nhân viên QL]" Member="Nhân_viên_QLs">
+    <Type Name="Nhân_viên_QL">
+      <Column Name="MaNV" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Tên NV]" Member="Tên_NV" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Nhân_viên_QL_Hóa_đơn" Member="Hóa_đơns" ThisKey="MaNV" OtherKey="MaNV" Type="Hóa_đơn" />
+      <Association Name="Nhân_viên_QL_HOPDONG" Member="HOPDONGs" ThisKey="MaNV" OtherKey="MaNV" Type="HOPDONG" />
+      <Association Name="Nhân_viên_QL_Tài_khoản" Member="Tài_khoảns" ThisKey="MaNV" OtherKey="MaNV" Type="Tài_khoản" />
+      <Association Name="Nhân_viên_QL_Thống_kê" Member="Thống_kês" ThisKey="MaNV" OtherKey="MaNV" Type="Thống_kê" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phòng" Member="Phòngs">
+    <Type Name="Phòng">
+      <Column Name="[Mã phòng]" Member="Mã_phòng" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Mã loại phòng]" Member="Mã_loại_phòng" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="SucChua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DTSD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Huong" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Association Name="Phòng_CT_TrangBi" Member="CT_TrangBis" ThisKey="Mã_phòng" OtherKey="Mã_phòng" Type="CT_TrangBi" />
+      <Association Name="Phòng_HOPDONG" Member="HOPDONGs" ThisKey="Mã_phòng" OtherKey="Mã_phòng" Type="HOPDONG" />
+      <Association Name="Loại_phòng_Phòng" Member="Loại_phòng" ThisKey="Mã_loại_phòng" OtherKey="Mã_loại_phòng" Type="Loại_phòng" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Tài khoản]" Member="Tài_khoảns">
+    <Type Name="Tài_khoản">
+      <Column Name="MaTK" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[User name]" Member="User_name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Association Name="Nhân_viên_QL_Tài_khoản" Member="Nhân_viên_QL" ThisKey="MaNV" OtherKey="MaNV" Type="Nhân_viên_QL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Thiết bị]" Member="Thiết_bịs">
+    <Type Name="Thiết_bị">
+      <Column Name="[Ma thiết bị]" Member="Ma_thiết_bị" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTB" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="[Mã loại TB]" Member="Mã_loại_TB" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Association Name="Thiết_bị_CT_TrangBi" Member="CT_TrangBis" ThisKey="Ma_thiết_bị" OtherKey="Ma_thiết_bị" Type="CT_TrangBi" />
+      <Association Name="Loại_thiết_bị_Thiết_bị" Member="Loại_thiết_bị" ThisKey="Mã_loại_TB" OtherKey="Mã_loại_TB" Type="Loại_thiết_bị" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Thống kê]" Member="Thống_kês">
+    <Type Name="Thống_kê">
+      <Column Name="[Số phiếu TK]" Member="Số_phiếu_TK" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Association Name="Nhân_viên_QL_Thống_kê" Member="Nhân_viên_QL" ThisKey="MaNV" OtherKey="MaNV" Type="Nhân_viên_QL" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
