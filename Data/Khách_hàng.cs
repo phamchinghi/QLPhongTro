@@ -26,7 +26,7 @@ namespace QL_PhongTro.Data
         public string Tên_KH { get; set; }
 
         [Column("Năm sinh")]
-        public DateTime? Năm_sinh { get; set; }
+        public DateTime Năm_sinh { get; set; }
 
         [Required]
         [StringLength(10)]

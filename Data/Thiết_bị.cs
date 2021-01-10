@@ -29,9 +29,13 @@ namespace QL_PhongTro.Data
         [StringLength(5)]
         public string Mã_loại_TB { get; set; }
 
-        [Column("Mã phòng")]
-        [StringLength(5)]
-        public string Mã_phòng { get; set; }
+        [Required]
+        [StringLength(10)]
+        public string DVT { get; set; }
+
+
+        [Column("Đơn giá")]
+        public int Đơn_giá { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_TrangBi> CT_TrangBi { get; set; }

@@ -9,11 +9,13 @@ namespace QL_PhongTro.Data
     public partial class CT_TrangBi
     {
         [Key]
+        [Required]
         [Column("Mã phòng", Order = 0)]
         [StringLength(5)]
         public string Mã_phòng { get; set; }
 
         [Key]
+        [Required]
         [Column("Ma thiết bị", Order = 1)]
         [StringLength(5)]
         public string Ma_thiết_bị { get; set; }
@@ -24,12 +26,6 @@ namespace QL_PhongTro.Data
         [Column("Ngày trang bị", TypeName = "date")]
         public DateTime Ngày_trang_bị { get; set; }
 
-        [Required]
-        [StringLength(10)]
-        public string DVT { get; set; }
-
-        [Column("Đơn giá")]
-        public int? Đơn_giá { get; set; }
 
         public virtual Phòng Phòng { get; set; }
 

@@ -28,8 +28,6 @@ namespace QL_PhongTro
         private void FormChiTietPhong_Load(object sender, EventArgs e)
         {
             skin();
-            cbXeMay.SelectedIndex = 0;
-            cbXeMay2.SelectedIndex = cbXeMay.SelectedIndex;
             //Lay thang cua he thong gan vao groupbox
             DateTime mon = DateTime.Now;
             gbThangSau.Text = "Tháng " + mon.Month.ToString();
@@ -42,8 +40,6 @@ namespace QL_PhongTro
                 gbThangTruoc.Text = "Tháng " + (mon.Month - 1).ToString();
             }
             bbtnThanhToan.Enabled = false;
-            bbtnThuePhong.Enabled = false;
-            bbtnGiuCho.Enabled = false;
             bbtnLuu.Enabled = false;
             bbtnTraPhong.Enabled = false;
         }

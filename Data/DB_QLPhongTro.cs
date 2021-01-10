@@ -174,11 +174,6 @@
                 .IsUnicode(false);
 
             modelBuilder.Entity<Thiết_bị>()
-                .Property(e => e.Mã_phòng)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Thiết_bị>()
                 .HasMany(e => e.CT_TrangBi)
                 .WithRequired(e => e.Thiết_bị)
                 .WillCascadeOnDelete(false);
